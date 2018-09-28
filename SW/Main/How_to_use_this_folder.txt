@@ -1,5 +1,5 @@
-This foldes is to be used for the build manager of the M4_DCMVC project
+This foldes is to be used for the build manager of the M4_DCMVC project.
 
-Build manager must add oficial releases for the client
+Build manager must add oficial releases for the client.
 
 The code is already tested by the IT&V competency
