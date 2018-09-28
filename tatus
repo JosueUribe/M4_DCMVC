@@ -1,0 +1,49 @@
+[33mcommit be3978dd282cfe3e03fec504fa29a96bc8065423[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gpe. Josue Uribe <guadalupe.uribe.dse@uteq.edu.mx>
+Date:   Fri Sep 28 14:54:48 2018 -0500
+
+    Renaming_files
+
+[33mcommit ffacd303d9baeb1979330dccfdd0dd0c44218ffc[m
+Author: Victor Alvarado <victor.alvarado.dse@uteq.edu.mx>
+Date:   Fri Sep 28 09:25:17 2018 -0500
+
+    Gant Diagram Update
+
+[33mcommit f4c45a7e13042a2e34fdca489f57c066fd1f20f2[m
+Author: Victor Alvarado <victor.alvarado.dse@uteq.edu.mx>
+Date:   Sat Sep 8 12:37:55 2018 -0500
+
+    Add activities
+
+[33mcommit 7bad4550a192b394d5df57da35e3b337de367d62[m
+Merge: 228f0b7 ad6f2ce
+Author: Victor Alvarado <victor.alvarado.dse@uteq.edu.mx>
+Date:   Sat Sep 8 11:43:04 2018 -0500
+
+    Project Planning
+    Project Planning
+
+[33mcommit 228f0b7f01a2430b52d31b0f7ad8f6e510f1b5ff[m
+Author: Victor Alvarado <victor.alvarado.dse@uteq.edu.mx>
+Date:   Sat Sep 8 11:42:29 2018 -0500
+
+    Change to english folder names and add 1.5.1 Project Planning
+
+[33mcommit ad6f2cee02be421c22f00b13cd27a4235860390d[m
+Author: Gpe. Josue Uribe <guadalupe.uribe.dse@uteq.edu.mx>
+Date:   Sat Sep 8 11:41:41 2018 -0500
+
+    Requirements Documentation Update
+
+[33mcommit 947b20a719e8079821a0e2f5339fc33973d55fae[m
+Author: Gpe. Josue Uribe <guadalupe.uribe.dse@uteq.edu.mx>
+Date:   Fri Sep 7 17:17:00 2018 -0500
+
+    1.2.1 SPICE CMMI
+
+[33mcommit 23e2d899882958a2644bab81eac0aba1c8aa579a[m
+Author: Gpe. Josue Uribe <guadalupe.uribe.dse@uteq.edu.mx>
+Date:   Fri Sep 7 17:08:30 2018 -0500
+
+    1.4.2 Proceso de Liberación de SW

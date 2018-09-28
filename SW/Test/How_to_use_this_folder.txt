@@ -1,0 +1,5 @@
+This foldes is to be used for the build manager of the M4_DCMVC project
+
+Build manager must store here the code to be tested by the IT&V competency
+
+The code stored here is taken from the current folder

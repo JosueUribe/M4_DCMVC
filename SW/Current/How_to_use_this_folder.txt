@@ -1,0 +1,7 @@
+This foldes is to be used for all the developers of the M4_DCMVC project
+
+Developers must create branches for their changes and add them to the main project
+
+This code must be functional, with out compilation issues
+
+This code is not tested yet by the IT&V competency
