@@ -118,7 +118,7 @@ void usb_console_thread_create(void)
 
     UINT err;
     err = tx_thread_create (&usb_console_thread, (CHAR *) "USB Serial Port Thread", usb_console_thread_func,
-                            (ULONG) NULL, &usb_console_thread_stack, 1024, 10, 10, 1, TX_AUTO_START);
+                            (ULONG) NULL, &usb_console_thread_stack, 1024, 9, 9, 1, TX_AUTO_START);
     if (TX_SUCCESS != err)
     {
         tx_startup_err_callback (&usb_console_thread, 0);

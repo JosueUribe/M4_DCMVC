@@ -13,6 +13,7 @@ extern void pwm_thread_entry(void);
 extern "C"
 {
 #endif
+extern TX_QUEUE g_cdc_to_pwm_queue;
 #ifdef __cplusplus
 } /* extern "C" */
 #endif

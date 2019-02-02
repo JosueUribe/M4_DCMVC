@@ -128,7 +128,6 @@
   <v1:configSetting configurationId="p308.gpio_mode" altId="p308.gpio_mode.gpio_mode_in"/>
   <v1:configSetting configurationId="p415.gpio_mode" altId="p415.gpio_mode.gpio_mode_peripheral"/>
   <v1:configSetting configurationId="p108.gpio_mode" altId="p108.gpio_mode.gpio_mode_peripheral"/>
-  <v1:configSetting configurationId="p008.gpio_mode" altId="p008.gpio_mode.gpio_mode_an"/>
   <v1:configSetting configurationId="sci0.mode" altId="sci0.mode.spi.free"/>
   <v1:configSetting configurationId="p305.gpio_drivecapacity" altId="p305.gpio_speed.gpio_speed_medium"/>
   <v1:configSetting configurationId="etherc1.rmii.rx_er" altId="etherc1.rmii.rx_er.p704">
@@ -211,34 +210,17 @@
   </v1:configSetting>
   <v1:configSetting configurationId="p608.gpio_mode" altId="p608.gpio_mode.gpio_mode_in"/>
   <v1:configSetting configurationId="p202.gpio_mode" altId="p202.gpio_mode.gpio_mode_peripheral"/>
-  <v1:configSetting configurationId="p015.gpio_mode" altId="p015.gpio_mode.gpio_mode_an"/>
-  <v1:configSetting configurationId="p002.gpio_mode" altId="p002.gpio_mode.gpio_mode_an"/>
   <v1:configSetting configurationId="adc0.an00" altId="adc0.an00.p000">
     <v1:connectionSetting altId="p000.adc0.an00"/>
   </v1:configSetting>
-  <v1:configSetting configurationId="adc0.an04" altId="adc0.an04.p009">
-    <v1:connectionSetting altId="p009.adc0.an04"/>
-  </v1:configSetting>
-  <v1:configSetting configurationId="adc0.an03" altId="adc0.an03.p008">
-    <v1:connectionSetting altId="p008.adc0.an03"/>
-  </v1:configSetting>
-  <v1:configSetting configurationId="adc0.an02" altId="adc0.an02.p002">
-    <v1:connectionSetting altId="p002.adc0.an02"/>
-  </v1:configSetting>
   <v1:configSetting configurationId="p900.gpio_mode" altId="p900.gpio_mode.gpio_mode_peripheral"/>
-  <v1:configSetting configurationId="adc0.an01" altId="adc0.an01.p001">
-    <v1:connectionSetting altId="p001.adc0.an01"/>
-  </v1:configSetting>
+  <v1:configSetting configurationId="adc0.an01" altId="adc0.an01.none"/>
   <v1:configSetting configurationId="p800.gpio_mode" altId="p800.gpio_mode.gpio_mode_out.low"/>
   <v1:configSetting configurationId="p908.gpio_drivecapacity" altId="p908.gpio_speed.gpio_speed_medium"/>
   <v1:configSetting configurationId="p315.gpio_drivecapacity" altId="p315.gpio_speed.gpio_speed_medium"/>
   <v1:configSetting configurationId="p101.gpio_mode" altId="p101.gpio_mode.gpio_mode_peripheral"/>
   <v1:configSetting configurationId="p900.gpio_drivecapacity" altId="p900.gpio_speed.gpio_speed_high"/>
   <v1:configSetting configurationId="p401.gpio_mode" altId="p401.gpio_mode.gpio_mode_peripheral"/>
-  <v1:configSetting configurationId="p001.gpio_mode" altId="p001.gpio_mode.gpio_mode_an"/>
-  <v1:configSetting configurationId="adc0.an06" altId="adc0.an06.p015">
-    <v1:connectionSetting altId="p015.adc0.an06"/>
-  </v1:configSetting>
   <v1:configSetting configurationId="p703.gpio_drivecapacity" altId="p703.gpio_speed.gpio_speed_high"/>
   <v1:configSetting configurationId="spi0.mode" altId="spi0.mode.enabled.free"/>
   <v1:configSetting configurationId="etherc1.rmii.mode" altId="etherc1.rmii.mode.custom.free"/>
@@ -469,7 +451,6 @@
   <v1:configSetting configurationId="p601" altId="p601.output.low"/>
   <v1:configSetting configurationId="p600" altId="p600.output.low"/>
   <v1:configSetting configurationId="sci2.mode" altId="sci2.mode.spi.free"/>
-  <v1:configSetting configurationId="p009.gpio_mode" altId="p009.gpio_mode.gpio_mode_an"/>
   <v1:configSetting configurationId="p605" altId="p605.input"/>
   <v1:configSetting configurationId="p604" altId="p604.input"/>
   <v1:configSetting configurationId="p603" altId="p603.input"/>
@@ -789,9 +770,6 @@
   <v1:configSetting configurationId="p014" altId="p014.dac0.da">
     <v1:connectionSetting altId="dac0.da.p014"/>
   </v1:configSetting>
-  <v1:configSetting configurationId="p015" altId="p015.adc0.an06">
-    <v1:connectionSetting altId="adc0.an06.p015"/>
-  </v1:configSetting>
   <v1:configSetting configurationId="usbhs0.vbusen" altId="usbhs0.vbusen.pb00">
     <v1:connectionSetting altId="pb00.usbhs0.vbusen"/>
   </v1:configSetting>
@@ -801,12 +779,6 @@
   <v1:configSetting configurationId="p010" altId="p010.input"/>
   <v1:configSetting configurationId="p005.gpio_mode" altId="p005.gpio_mode.gpio_mode_in"/>
   <v1:configSetting configurationId="p413.gpio_drivecapacity" altId="p413.gpio_speed.gpio_speed_medium"/>
-  <v1:configSetting configurationId="p002" altId="p002.adc0.an02">
-    <v1:connectionSetting altId="adc0.an02.p002"/>
-  </v1:configSetting>
-  <v1:configSetting configurationId="p001" altId="p001.adc0.an01">
-    <v1:connectionSetting altId="adc0.an01.p001"/>
-  </v1:configSetting>
   <v1:configSetting configurationId="p000" altId="p000.adc0.an00">
     <v1:connectionSetting altId="adc0.an00.p000"/>
   </v1:configSetting>
@@ -815,12 +787,6 @@
   <v1:configSetting configurationId="p005" altId="p005.input"/>
   <v1:configSetting configurationId="p004" altId="p004.input"/>
   <v1:configSetting configurationId="p908.gpio_mode" altId="p908.gpio_mode.gpio_mode_peripheral"/>
-  <v1:configSetting configurationId="p009" altId="p009.adc0.an04">
-    <v1:connectionSetting altId="adc0.an04.p009"/>
-  </v1:configSetting>
-  <v1:configSetting configurationId="p008" altId="p008.adc0.an03">
-    <v1:connectionSetting altId="adc0.an03.p008"/>
-  </v1:configSetting>
   <v1:configSetting configurationId="p405.gpio_mode" altId="p405.gpio_mode.gpio_mode_peripheral"/>
   <v1:propertySetting propertyId="p313.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_TCON2_B"/>
   <v1:propertySetting propertyId="p108.symbolic_name" value="JTAG_TMS"/>
@@ -829,7 +795,6 @@
   <v1:propertySetting propertyId="p103.symbolic_name" value="SPI0__Pin_Option_A_SSLA0_A"/>
   <v1:propertySetting propertyId="p507.symbolic_name" value="GPIO17"/>
   <v1:propertySetting propertyId="p207.symbolic_name" value="Cap_Touch_Sensing_Unit_TS02"/>
-  <v1:propertySetting propertyId="p009.symbolic_name" value="GPIO22"/>
   <v1:propertySetting propertyId="p112.symbolic_name" value="GPIO5"/>
   <v1:propertySetting propertyId="p412.symbolic_name" value="SCI0_SCK0"/>
   <v1:propertySetting propertyId="p403.symbolic_name" value="Ethernet_Controller_1_RMII_ET1_MDC"/>
@@ -842,7 +807,6 @@
   <v1:propertySetting propertyId="p006.symbolic_name" value="GPIO24"/>
   <v1:propertySetting propertyId="p410.symbolic_name" value="SCI0_RXD0_SCL0_MISO0"/>
   <v1:propertySetting propertyId="p301.symbolic_name" value="SCI2_RXD2_SCL2_MISO2"/>
-  <v1:propertySetting propertyId="p001.symbolic_name" value="GPIO28"/>
   <v1:propertySetting propertyId="p705.symbolic_name" value="Ethernet_Controller_1_RMII_RMII1_CRS_DV"/>
   <v1:propertySetting propertyId="p110.symbolic_name" value="JTAG_TDI"/>
   <v1:propertySetting propertyId="p105.symbolic_name" value="SCI8_TXD8_SDA8_MOSI8"/>
@@ -863,7 +827,6 @@
   <v1:propertySetting propertyId="p303.symbolic_name" value="GPIO39"/>
   <v1:propertySetting propertyId="p106.symbolic_name" value="SCI8_SCK8"/>
   <v1:propertySetting propertyId="p406.symbolic_name" value="Ethernet_Controller_1_RMII_RMII1_TXD1"/>
-  <v1:propertySetting propertyId="p002.symbolic_name" value="GPIO27"/>
   <v1:propertySetting propertyId="p302.symbolic_name" value="SCI2_TXD2_SDA2_MOSI2"/>
   <v1:propertySetting propertyId="p500.symbolic_name" value="Quad_SPI_QSPCLK"/>
   <v1:propertySetting propertyId="p311.symbolic_name" value="GPIO32"/>
@@ -884,7 +847,6 @@
   <v1:propertySetting propertyId="p300.symbolic_name" value="JTAG_TCK"/>
   <v1:propertySetting propertyId="pb00.symbolic_name" value="USB_High_Speed_USBHS_VBUSEN"/>
   <v1:propertySetting propertyId="p605.symbolic_name" value="GPIO1"/>
-  <v1:propertySetting propertyId="p000.symbolic_name" value="GPIO29"/>
   <v1:propertySetting propertyId="p111.symbolic_name" value="GPIO4"/>
   <v1:propertySetting propertyId="p704.symbolic_name" value="Ethernet_Controller_1_RMII_RMII1_RX_ER"/>
   <v1:propertySetting propertyId="p411.symbolic_name" value="SCI0_TXD0_SDA0_MOSI0"/>
@@ -908,7 +870,6 @@
   <v1:propertySetting propertyId="p203.symbolic_name" value="GPIO21"/>
   <v1:propertySetting propertyId="p401.symbolic_name" value="CAN0_CTX0"/>
   <v1:propertySetting propertyId="pa09.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_DATA08_B"/>
-  <v1:propertySetting propertyId="p015.symbolic_name" value="GPIO18"/>
   <v1:propertySetting propertyId="p607.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_DATA04_B"/>
   <v1:propertySetting propertyId="p315.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_TCON0_B"/>
   <v1:propertySetting propertyId="p615.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_DATA10_B"/>
@@ -925,7 +886,6 @@
   <v1:propertySetting propertyId="p308.symbolic_name" value="GPIO35"/>
   <v1:propertySetting propertyId="p505.symbolic_name" value="Quad_SPI_QIO3"/>
   <v1:propertySetting propertyId="p614.symbolic_name" value="GPIO38"/>
-  <v1:propertySetting propertyId="p008.symbolic_name" value="GPIO23"/>
   <v1:propertySetting propertyId="p205.symbolic_name" value="Cap_Touch_Sensing_Unit_TSCAP"/>
   <v1:propertySetting propertyId="p314.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_TCON1_B"/>
   <v1:propertySetting propertyId="p402.symbolic_name" value="CAN0_CRX0"/>

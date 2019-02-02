@@ -19,7 +19,7 @@ void adc_thread_create(void)
     /* Initialize each kernel object. */
 
     UINT err;
-    err = tx_thread_create (&adc_thread, (CHAR *) "ADC", adc_thread_func, (ULONG) NULL, &adc_thread_stack, 1024, 9, 9,
+    err = tx_thread_create (&adc_thread, (CHAR *) "ADC", adc_thread_func, (ULONG) NULL, &adc_thread_stack, 1024, 6, 6,
                             1, TX_AUTO_START);
     if (TX_SUCCESS != err)
     {

@@ -14,7 +14,7 @@ adc_instance_ctrl_t g_adc0_ctrl;
 const adc_cfg_t g_adc0_cfg =
 { .unit = 0,
   .mode = ADC_MODE_CONTINUOUS_SCAN,
-  .resolution = ADC_RESOLUTION_12_BIT,
+  .resolution = ADC_RESOLUTION_10_BIT,
   .alignment = ADC_ALIGNMENT_RIGHT,
   .add_average_count = ADC_ADD_OFF,
   .clearing = ADC_CLEAR_AFTER_READ_ON,
@@ -61,7 +61,7 @@ static const timer_on_gpt_cfg_t g_timer0_extend =
   { .output_enabled = true, .stop_level = GPT_PIN_LEVEL_LOW },
   .shortest_pwm_signal = GPT_SHORTEST_LEVEL_OFF, };
 static const timer_cfg_t g_timer0_cfg =
-{ .mode = TIMER_MODE_PWM, .period = 10, .unit = TIMER_UNIT_FREQUENCY_KHZ, .duty_cycle = 50, .duty_cycle_unit =
+{ .mode = TIMER_MODE_PWM, .period = 10, .unit = TIMER_UNIT_FREQUENCY_HZ, .duty_cycle = 50, .duty_cycle_unit =
           TIMER_PWM_UNIT_PERCENT,
   .channel = 7, .autostart = false, .p_callback = NULL, .p_context = &g_timer0, .p_extend = &g_timer0_extend, .irq_ipl =
           (2), };
