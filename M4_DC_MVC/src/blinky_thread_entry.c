@@ -43,7 +43,7 @@ void blinky_thread_entry(void)
     sprintf(send_str, "Welcome to SKS7G2");
     tx_queue_send(&g_cdc_queue, send_str, TX_WAIT_FOREVER);
 
-    uint32_t counter = 0;
+    uint16_t counter = 0;
 
     while (1) {
         /* Determine the next state of the LEDs */
@@ -57,9 +57,10 @@ void blinky_thread_entry(void)
         ++counter ;
 
         /* Update all board LEDs */
-        for(uint32_t i = 0; i < leds.led_count; i++)   {
+/*        for(uint32_t i = 0; i < leds.led_count; i++)   {
             g_ioport.p_api->pinWrite(leds.p_leds[i], level);
-        }
+        }*/
+        g_ioport.p_api->pinWrite(leds.p_leds[0], level);
 
        //TX_WAIT_FOREVER : This will block Blinky Thread until PC receive message.
         tx_queue_send(&g_cdc_queue, send_str, delay);  // TX_WAIT_FOREVER);

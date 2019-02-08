@@ -10,7 +10,7 @@ extern TX_QUEUE g_cdc_queue;
 extern TX_QUEUE g_cdc_to_pwm_queue;
 
 
-UINT status_adc = 8;
+UINT TX_status_adc = TX_SUCCESS;
 uint16_t u16ADC_Data = 0;
 uint16_t u16ADC_FilteredData = 0;
 static uint16_t SendFilteredData = 0;
@@ -30,7 +30,13 @@ void adc_thread_entry(void)
         u16ADC_FilteredData = (u16ADC_Data + (C_FILTER_ORDER - 1)*u16ADC_FilteredData) / C_FILTER_ORDER;
         SendFilteredData = u16ADC_FilteredData;
 
-        status_adc = tx_queue_send(&g_cdc_to_pwm_queue, &SendFilteredData, TX_NO_WAIT); //sends data to PWM
+        TX_status_adc = tx_queue_send(&g_cdc_to_pwm_queue, &SendFilteredData, TX_NO_WAIT); //sends data to PWM
+        if (TX_SUCCESS != TX_status_adc)
+        {
+            sprintf(send_adc_trace, "Error %d transmiting data\r", TX_status_adc);
+            tx_queue_send(&g_cdc_queue, send_adc_trace, TX_NO_WAIT);
+        }
+
 
         /*Console traces*/
         sprintf(send_adc_trace, "ADC raw data: %d\r", u16ADC_Data);
@@ -54,5 +60,8 @@ void adc_thread_entry(void)
  *
  * - 01-Feb-2019 Victor Alvarado Rev 2
  *   - Task: Implement communication between ADC and PWM
+ *
+ * - 08-Feb-2019 Victor Alvarado Rev 3
+ *   - Task: Add traces for errors transmiting data.
  *
  *===========================================================================*/

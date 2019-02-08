@@ -7,6 +7,7 @@ C_SRCS += \
 ../src/synergy_gen/adc_thread.c \
 ../src/synergy_gen/blinky_thread.c \
 ../src/synergy_gen/common_data.c \
+../src/synergy_gen/diagnostics_thread.c \
 ../src/synergy_gen/hal_data.c \
 ../src/synergy_gen/main.c \
 ../src/synergy_gen/pin_data.c \
@@ -17,6 +18,7 @@ OBJS += \
 ./src/synergy_gen/adc_thread.o \
 ./src/synergy_gen/blinky_thread.o \
 ./src/synergy_gen/common_data.o \
+./src/synergy_gen/diagnostics_thread.o \
 ./src/synergy_gen/hal_data.o \
 ./src/synergy_gen/main.o \
 ./src/synergy_gen/pin_data.o \
@@ -27,6 +29,7 @@ C_DEPS += \
 ./src/synergy_gen/adc_thread.d \
 ./src/synergy_gen/blinky_thread.d \
 ./src/synergy_gen/common_data.d \
+./src/synergy_gen/diagnostics_thread.d \
 ./src/synergy_gen/hal_data.d \
 ./src/synergy_gen/main.d \
 ./src/synergy_gen/pin_data.d \

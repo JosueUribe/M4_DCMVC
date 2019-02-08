@@ -395,6 +395,14 @@
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
       <property id="rtos.threadx.thread.timeslice" value="1"/>
     </context>
+    <context id="rtos.threadx.thread.816598462">
+      <property id="_symbol" value="diagnostics_thread"/>
+      <property id="rtos.threadx.thread.name" value="DIAGNOSTICS"/>
+      <property id="rtos.threadx.thread.stack" value="1024"/>
+      <property id="rtos.threadx.thread.priority" value="9"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="1"/>
+    </context>
     <config id="config.el.ux_v2"/>
     <config id="config.framework.sf_el_ux_comms_v2">
       <property id="config.framework.sf_comms.param_checking_enable" value="config.framework.sf_comms.param_checking_enable.bsp"/>

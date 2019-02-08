@@ -138,7 +138,7 @@
   <v1:configSetting configurationId="p706.gpio_mode" altId="p706.gpio_mode.gpio_mode_peripheral"/>
   <v1:configSetting configurationId="p906.gpio_mode" altId="p906.gpio_mode.gpio_mode_peripheral"/>
   <v1:configSetting configurationId="p106.gpio_mode" altId="p106.gpio_mode.gpio_mode_peripheral"/>
-  <v1:configSetting configurationId="p006.gpio_mode" altId="p006.gpio_mode.gpio_mode_in"/>
+  <v1:configSetting configurationId="p006.gpio_mode" altId="p006.gpio_mode.disabled"/>
   <v1:configSetting configurationId="p506.gpio_mode" altId="p506.gpio_mode.gpio_mode_in"/>
   <v1:configSetting configurationId="p606.gpio_mode" altId="p606.gpio_mode.gpio_mode_peripheral"/>
   <v1:configSetting configurationId="p406.gpio_mode" altId="p406.gpio_mode.gpio_mode_peripheral"/>
@@ -380,7 +380,7 @@
   <v1:configSetting configurationId="p700" altId="p700.etherc1.rmii.txd0">
     <v1:connectionSetting altId="etherc1.rmii.txd0.p700"/>
   </v1:configSetting>
-  <v1:configSetting configurationId="p006.gpio_irq" altId="p006.gpio_irq.gpio_irq_enabled"/>
+  <v1:configSetting configurationId="p006.gpio_irq" altId="p006.gpio_irq.gpio_irq_none"/>
   <v1:configSetting configurationId="p307.gpio_mode" altId="p307.gpio_mode.gpio_mode_out.low"/>
   <v1:configSetting configurationId="p704" altId="p704.etherc1.rmii.rx_er">
     <v1:connectionSetting altId="etherc1.rmii.rx_er.p704"/>
@@ -521,7 +521,7 @@
   </v1:configSetting>
   <v1:configSetting configurationId="p410.gpio_mode" altId="p410.gpio_mode.gpio_mode_peripheral"/>
   <v1:configSetting configurationId="p010.gpio_mode" altId="p010.gpio_mode.gpio_mode_in"/>
-  <v1:configSetting configurationId="p005.gpio_irq" altId="p005.gpio_irq.gpio_irq_enabled"/>
+  <v1:configSetting configurationId="p005.gpio_irq" altId="p005.gpio_irq.gpio_irq_none"/>
   <v1:configSetting configurationId="p410" altId="p410.sci0.rxd">
     <v1:connectionSetting altId="sci0.rxd.p410"/>
   </v1:configSetting>
@@ -777,14 +777,12 @@
     <v1:connectionSetting altId="glcdc0.lcd_data07.pa10"/>
   </v1:configSetting>
   <v1:configSetting configurationId="p010" altId="p010.input"/>
-  <v1:configSetting configurationId="p005.gpio_mode" altId="p005.gpio_mode.gpio_mode_in"/>
+  <v1:configSetting configurationId="p005.gpio_mode" altId="p005.gpio_mode.disabled"/>
   <v1:configSetting configurationId="p413.gpio_drivecapacity" altId="p413.gpio_speed.gpio_speed_medium"/>
   <v1:configSetting configurationId="p000" altId="p000.adc0.an00">
     <v1:connectionSetting altId="adc0.an00.p000"/>
   </v1:configSetting>
   <v1:configSetting configurationId="p411.gpio_drivecapacity" altId="p411.gpio_speed.gpio_speed_medium"/>
-  <v1:configSetting configurationId="p006" altId="p006.input"/>
-  <v1:configSetting configurationId="p005" altId="p005.input"/>
   <v1:configSetting configurationId="p004" altId="p004.input"/>
   <v1:configSetting configurationId="p908.gpio_mode" altId="p908.gpio_mode.gpio_mode_peripheral"/>
   <v1:configSetting configurationId="p405.gpio_mode" altId="p405.gpio_mode.gpio_mode_peripheral"/>
@@ -919,4 +917,9 @@
     <v1:connectionSetting altId="p303.gpt7.gtiocb"/>
   </v1:configSetting>
   <v1:configSetting configurationId="gpt7.mode" altId="gpt7.mode.gtiocaorgtiocb.free"/>
+  <v1:configSetting configurationId="p101.gpio_otype" altId="p101.gpio_otype.gpio_otype_none"/>
+  <v1:configSetting configurationId="p001.gpio_mode" altId="p001.gpio_mode.gpio_mode_in"/>
+  <v1:configSetting configurationId="p001.gpio_irq" altId="p001.gpio_irq.gpio_irq_none"/>
+  <v1:configSetting configurationId="p001" altId="p001.input"/>
+  <v1:propertySetting propertyId="p001.comment" value="This pin is used to monitor short circuit"/>
 </v1:pinSettings>

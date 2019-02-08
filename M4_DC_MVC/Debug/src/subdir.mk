@@ -6,6 +6,7 @@
 C_SRCS += \
 ../src/adc_thread_entry.c \
 ../src/blinky_thread_entry.c \
+../src/diagnostics_thread_entry.c \
 ../src/hal_entry.c \
 ../src/pwm_thread_entry.c \
 ../src/usb_console_thread_entry.c 
@@ -13,6 +14,7 @@ C_SRCS += \
 OBJS += \
 ./src/adc_thread_entry.o \
 ./src/blinky_thread_entry.o \
+./src/diagnostics_thread_entry.o \
 ./src/hal_entry.o \
 ./src/pwm_thread_entry.o \
 ./src/usb_console_thread_entry.o 
@@ -20,6 +22,7 @@ OBJS += \
 C_DEPS += \
 ./src/adc_thread_entry.d \
 ./src/blinky_thread_entry.d \
+./src/diagnostics_thread_entry.d \
 ./src/hal_entry.d \
 ./src/pwm_thread_entry.d \
 ./src/usb_console_thread_entry.d 
