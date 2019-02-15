@@ -273,11 +273,11 @@ Synergy Configuration
     Full Speed Interrupt Priority: Priority 10
     LDO Regulator(Only for S3 and S1 part MCUs): Disable
     
-  Module "Timer Driver on r_gpt"
-    Parameter Checking: Default (BSP)
-    
   Module "ADC Driver on r_adc"
     Parameter Checking: Enabled
+    
+  Module "Timer Driver on r_gpt"
+    Parameter Checking: Default (BSP)
     
   Module "External IRQ Driver on r_icu"
     Parameter Checking: Default (BSP)
@@ -295,6 +295,92 @@ Synergy Configuration
     Instance "g_ioport I/O Port Driver on r_ioport"
       Name [Fixed]: g_ioport
       
+  Thread "Blinky Thread"
+    Symbol: blinky_thread
+    Name: Blinky Thread
+    Stack size (bytes): 1024
+    Priority: 9
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+  Thread "USB Serial Port Thread"
+    Symbol: usb_console_thread
+    Name: USB Serial Port Thread
+    Stack size (bytes): 1024
+    Priority: 9
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+    Instance "g_sf_comms0 Communications Framework on sf_el_ux_comms_v2"
+      Name: g_sf_comms0
+      Name of generated initialization function: sf_comms_init0
+      Auto Initialization: Enable
+      
+      Instance "g_ux_device_class_cdc_acm0 USBX Device Class CDC-ACM"
+        Name: g_ux_device_class_cdc_acm0
+        USBX CDC-ACM instance_activate Function Callback: ux_cdc_device0_instance_activate
+        USBX CDC-ACM instance_deactivate Function Callback: ux_cdc_device0_instance_deactivate
+        Name of generated initialization function: ux_device_class_cdc_acm_init0
+        Auto Initialization: Enable
+        
+        Instance "USBX Device Configuration"
+          Vendor ID: 0x045B
+          Product ID: 0x0000
+          Device Release Number: 0x0000
+          Index of Manufacturer String Descriptor: 0x00
+          Index of Product String Descriptor: 0x00
+          Index of Serial Number String Descriptor: 0x00
+          Class Code: Miscellaneous
+          Index of String Descriptor describing this configuration: 0x00
+          Size of USB Descriptor in bytes for this configuration (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+          Number of Interfaces (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+          Self-Powered: Enable
+          Remote Wakeup: Disable
+          Maximum Power Consumption (in 2mA units): 50
+          Supported Language Code: 0x0409
+          Name of USBX String Framework: NULL
+          Total index number of USB String Descriptors in USBX String Framework: 0
+          Name of USBX Language Framework: NULL
+          Number of Languages to support (US English is applied if zero is set): 0
+          Name of generated initialization function: ux_device_init0
+          Auto Initialization: Enable
+          
+          Instance "g_sf_el_ux_dcd_fs_0 USBX Port DCD on sf_el_ux for USBFS"
+            Name: g_sf_el_ux_dcd_fs_0
+            USB Controller Selection: USBFS
+            
+          Instance "USBX on ux"
+            USBX Pool Memory Name: g_ux_pool_memory
+            USBX Pool Memory Size: 18432
+            User Callback for Host Event Notification(Only valid for USB Host): NULL
+            Name of generated initialization function: ux_common_init0
+            Auto Initialization: Enable
+            
+        Instance "g_usb_interface_desc_cdcacm_0 USBX Interface Configuration CDC-ACM"
+          Name: g_usb_interface_desc_cdcacm_0
+          Interface Number of Communications Class interface: 0x00
+          Interrupt Transfer endpoint to use for Communications Class: Endpoint 3
+          Polling period for Interrupt Endpoint (in mS/125us units for FS/HS): 0x0F
+          Interface Number of Data Class interface: 0x01
+          Bulk In Transfer endpoint to use for Data Class: Endpoint 1
+          Bulk Out Transfer endpoint to use for Data Class: Endpoint 2
+          Index of String Descriptor Describing Communications Class interface (Interface Descriptor:iInterface).: 0x00
+          Index of String Descriptor Describing Data Class interface (Interface Descriptor:iInterface).: 0x00
+          
+    Object "g_cdc_queue Queue"
+      Name: CDC Queue
+      Symbol: g_cdc_queue
+      Message Size (Words): 10
+      Queue Size (Bytes): 100
+      
+  Thread "PWM"
+    Symbol: pwm_thread
+    Name: PWM
+    Stack size (bytes): 1024
+    Priority: 5
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
     Instance "g_timer0 Timer Driver on r_gpt"
       Name: g_timer0
       Channel: 7
@@ -312,6 +398,20 @@ Synergy Configuration
       Callback: NULL
       Overflow Interrupt Priority: Priority 2
       
+    Object "g_cdc_to_pwm_queue Queue"
+      Name: PWM Queue
+      Symbol: g_cdc_to_pwm_queue
+      Message Size (Words): 1
+      Queue Size (Bytes): 100
+      
+  Thread "ADC"
+    Symbol: adc_thread
+    Name: ADC
+    Stack size (bytes): 1024
+    Priority: 5
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
     Instance "g_adc0 ADC Driver on r_adc"
       Name: g_adc0
       Unit: 0
@@ -395,133 +495,6 @@ Synergy Configuration
       Scan End Interrupt Priority: Disabled
       Scan End Group B Interrupt Priority: Disabled
       
-    Instance "g_timer1 Timer Driver on r_gpt"
-      Name: g_timer1
-      Channel: 6
-      Mode: Periodic
-      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
-      Period Value: 1
-      Period Unit: Milliseconds
-      Duty Cycle Value: 50
-      Duty Cycle Unit: Unit Raw Counts
-      Auto Start: False
-      GTIOCA Output Enabled: True
-      GTIOCA Stop Level: Pin Level Low
-      GTIOCB Output Enabled: True
-      GTIOCB Stop Level: Pin Level Low
-      Callback: timer_callback_turn
-      Overflow Interrupt Priority: Priority 5
-      
-    Instance "g_external_irq10 External IRQ Driver on r_icu"
-      Name: g_external_irq10
-      Channel: 10
-      Trigger: Falling
-      Digital Filtering: Enabled
-      Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
-      Interrupt enabled after initialization: True
-      Callback: hall_sensor_pulses_callback
-      Pin Interrupt Priority: Priority 5
-      
-  Thread "Blinky Thread"
-    Symbol: blinky_thread
-    Name: Blinky Thread
-    Stack size (bytes): 1024
-    Priority: 10
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
-  Thread "USB Serial Port Thread"
-    Symbol: usb_console_thread
-    Name: USB Serial Port Thread
-    Stack size (bytes): 1024
-    Priority: 9
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
-    Instance "g_sf_comms0 Communications Framework on sf_el_ux_comms_v2"
-      Name: g_sf_comms0
-      Name of generated initialization function: sf_comms_init0
-      Auto Initialization: Enable
-      
-      Instance "g_ux_device_class_cdc_acm0 USBX Device Class CDC-ACM"
-        Name: g_ux_device_class_cdc_acm0
-        USBX CDC-ACM instance_activate Function Callback: ux_cdc_device0_instance_activate
-        USBX CDC-ACM instance_deactivate Function Callback: ux_cdc_device0_instance_deactivate
-        Name of generated initialization function: ux_device_class_cdc_acm_init0
-        Auto Initialization: Enable
-        
-        Instance "USBX Device Configuration"
-          Vendor ID: 0x045B
-          Product ID: 0x0000
-          Device Release Number: 0x0000
-          Index of Manufacturer String Descriptor: 0x00
-          Index of Product String Descriptor: 0x00
-          Index of Serial Number String Descriptor: 0x00
-          Class Code: Miscellaneous
-          Index of String Descriptor describing this configuration: 0x00
-          Size of USB Descriptor in bytes for this configuration (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
-          Number of Interfaces (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
-          Self-Powered: Enable
-          Remote Wakeup: Disable
-          Maximum Power Consumption (in 2mA units): 50
-          Supported Language Code: 0x0409
-          Name of USBX String Framework: NULL
-          Total index number of USB String Descriptors in USBX String Framework: 0
-          Name of USBX Language Framework: NULL
-          Number of Languages to support (US English is applied if zero is set): 0
-          Name of generated initialization function: ux_device_init0
-          Auto Initialization: Enable
-          
-          Instance "g_sf_el_ux_dcd_fs_0 USBX Port DCD on sf_el_ux for USBFS"
-            Name: g_sf_el_ux_dcd_fs_0
-            USB Controller Selection: USBFS
-            
-          Instance "USBX on ux"
-            USBX Pool Memory Name: g_ux_pool_memory
-            USBX Pool Memory Size: 18432
-            User Callback for Host Event Notification(Only valid for USB Host): NULL
-            Name of generated initialization function: ux_common_init0
-            Auto Initialization: Enable
-            
-        Instance "g_usb_interface_desc_cdcacm_0 USBX Interface Configuration CDC-ACM"
-          Name: g_usb_interface_desc_cdcacm_0
-          Interface Number of Communications Class interface: 0x00
-          Interrupt Transfer endpoint to use for Communications Class: Endpoint 3
-          Polling period for Interrupt Endpoint (in mS/125us units for FS/HS): 0x0F
-          Interface Number of Data Class interface: 0x01
-          Bulk In Transfer endpoint to use for Data Class: Endpoint 1
-          Bulk Out Transfer endpoint to use for Data Class: Endpoint 2
-          Index of String Descriptor Describing Communications Class interface (Interface Descriptor:iInterface).: 0x00
-          Index of String Descriptor Describing Data Class interface (Interface Descriptor:iInterface).: 0x00
-          
-    Object "g_cdc_queue Queue"
-      Name: CDC Queue
-      Symbol: g_cdc_queue
-      Message Size (Words): 10
-      Queue Size (Bytes): 100
-      
-  Thread "PWM"
-    Symbol: pwm_thread
-    Name: PWM
-    Stack size (bytes): 1024
-    Priority: 5
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
-    Object "g_cdc_to_pwm_queue Queue"
-      Name: PWM Queue
-      Symbol: g_cdc_to_pwm_queue
-      Message Size (Words): 1
-      Queue Size (Bytes): 100
-      
-  Thread "ADC"
-    Symbol: adc_thread
-    Name: ADC
-    Stack size (bytes): 1024
-    Priority: 6
-    Auto start: Enabled
-    Time slicing interval (ticks): 1
-    
   Thread "DIAGNOSTICS"
     Symbol: diagnostics_thread
     Name: DIAGNOSTICS
@@ -538,4 +511,31 @@ Synergy Configuration
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
+    Instance "g_timer1 Timer Driver on r_gpt"
+      Name: g_timer1
+      Channel: 6
+      Mode: Periodic
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 1
+      Period Unit: Milliseconds
+      Duty Cycle Value: 50
+      Duty Cycle Unit: Unit Raw Counts
+      Auto Start: False
+      GTIOCA Output Enabled: True
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: True
+      GTIOCB Stop Level: Pin Level Low
+      Callback: timer_callback_turn
+      Overflow Interrupt Priority: Priority 9
+      
+    Instance "g_external_irq10 External IRQ Driver on r_icu"
+      Name: g_external_irq10
+      Channel: 10
+      Trigger: Falling
+      Digital Filtering: Enabled
+      Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
+      Interrupt enabled after initialization: True
+      Callback: hall_sensor_pulses_callback
+      Pin Interrupt Priority: Priority 4
+      
   Messaging

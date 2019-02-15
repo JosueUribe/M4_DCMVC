@@ -74,11 +74,7 @@ src/synergy_gen/Hall_Effect_Thread.o: \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_icu.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_external_irq_api.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_gpt.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_timer_api.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_adc.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_adc_api.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_timer_api.h
 
 ../src/synergy_gen/hall_effect_thread.h:
 
@@ -231,11 +227,3 @@ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Int
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_gpt.h:
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_timer_api.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_adc.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_adc_api.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h:

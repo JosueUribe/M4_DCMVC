@@ -18,11 +18,11 @@ extern TX_QUEUE g_cdc_queue;
 /*!===========================================================================*
  * Global Type Declarations
  *===========================================================================*/
-uint16_t elapsed_time_ms = 0;
-uint16_t time_ms = PERIOD_TIMER_VALUE_MS;
-uint16_t timer_counts = 0;
-uint16_t pulses_count = 0;
-bool elapsed_time_flag = false;
+static uint16_t elapsed_time_ms = 0;
+static uint16_t time_ms = PERIOD_TIMER_VALUE_MS;
+static uint16_t timer_counts = 0;
+static uint16_t pulses_count = 0;
+static bool elapsed_time_flag = false;
 static char send_trace[30];  //to store debug strings
 
 /*!===========================================================================*
@@ -56,10 +56,10 @@ void hall_effect_thread_entry(void)
             /*Send value to PID module*/
 
             /*print console debug traces*/
-            sprintf(send_trace, "Elapsed time per turn is: %d, number per rpm is = %d\r", elapsed_time_ms, rpm);
+            sprintf(send_trace, "E_T: %d, N_T_rpm: %d\r", elapsed_time_ms, rpm);
             tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
         }
-        /*tx_thread_sleep (1);*/
+        tx_thread_sleep (1);
     }
 }
 

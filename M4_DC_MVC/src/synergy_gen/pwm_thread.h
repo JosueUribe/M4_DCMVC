@@ -9,9 +9,16 @@ extern "C" void pwm_thread_entry(void);
 #else
 extern void pwm_thread_entry(void);
 #endif
+#include "r_gpt.h"
+#include "r_timer_api.h"
 #ifdef __cplusplus
 extern "C"
 {
+#endif
+/** Timer on GPT Instance. */
+extern const timer_instance_t g_timer0;
+#ifndef NULL
+void NULL(timer_callback_args_t *p_args);
 #endif
 extern TX_QUEUE g_cdc_to_pwm_queue;
 #ifdef __cplusplus
