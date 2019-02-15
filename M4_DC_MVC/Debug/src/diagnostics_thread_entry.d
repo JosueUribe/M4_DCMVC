@@ -71,12 +71,14 @@ src/diagnostics_thread_entry.o: ../src/diagnostics_thread_entry.c \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\framework/sf_el_ux_dcd_fs_cfg.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\framework/sf_el_ux_cfg.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\el/ux_device_class_cdc_acm.h \
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_icu.h \
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_external_irq_api.h \
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_gpt.h \
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_timer_api.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_adc.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_adc_api.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_gpt.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_timer_api.h
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\src\synergy_gen/diagnostics_thread.h:
 
@@ -222,6 +224,14 @@ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Int
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\el/ux_device_class_cdc_acm.h:
 
+C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_icu.h:
+
+C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_external_irq_api.h:
+
+C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_gpt.h:
+
+C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_timer_api.h:
+
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_adc.h:
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h:
@@ -229,7 +239,3 @@ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Int
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_adc_api.h:
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_gpt.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_timer_api.h:

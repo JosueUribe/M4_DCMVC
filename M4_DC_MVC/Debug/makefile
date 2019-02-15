@@ -13,6 +13,7 @@ RM := rm -rf
 -include synergy/ssp/src/framework/sf_el_ux_comms_v2/subdir.mk
 -include synergy/ssp/src/framework/sf_el_ux/subdir.mk
 -include synergy/ssp/src/driver/r_ioport/subdir.mk
+-include synergy/ssp/src/driver/r_icu/subdir.mk
 -include synergy/ssp/src/driver/r_gpt/subdir.mk
 -include synergy/ssp/src/driver/r_fmi/subdir.mk
 -include synergy/ssp/src/driver/r_elc/subdir.mk

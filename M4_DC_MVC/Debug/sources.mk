@@ -29,6 +29,7 @@ synergy/ssp/src/driver/r_cgc \
 synergy/ssp/src/driver/r_elc \
 synergy/ssp/src/driver/r_fmi \
 synergy/ssp/src/driver/r_gpt \
+synergy/ssp/src/driver/r_icu \
 synergy/ssp/src/driver/r_ioport \
 synergy/ssp/src/framework/sf_el_ux \
 synergy/ssp/src/framework/sf_el_ux_comms_v2 \

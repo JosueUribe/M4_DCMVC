@@ -162,6 +162,10 @@
       <description>General Purpose Timer: Provides=[Timer ,GPT]</description>
       <originalPack>Renesas.Synergy.1.5.0-rc.1.pack</originalPack>
     </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_icu" variant="" vendor="Renesas" version="1.5.0-rc.1">
+      <description>External IRQ: Provides=[External IRQ]</description>
+      <originalPack>Renesas.Synergy.1.5.0-rc.1.pack</originalPack>
+    </component>
   </synergyComponentSelection>
   <synergyIcuConfiguration/>
   <synergyMessagingConfiguration/>
@@ -334,6 +338,33 @@
       <property id="module.driver.adc.scan_end_ipl" value="board.icu.common.irq.disabled"/>
       <property id="module.driver.adc.scan_end_b_ipl" value="board.icu.common.irq.disabled"/>
     </module>
+    <module id="module.driver.timer_on_gpt.1184676838">
+      <property id="module.driver.timer.name" value="g_timer1"/>
+      <property id="module.driver.timer.channel" value="6"/>
+      <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_periodic"/>
+      <property id="module.driver.timer.shortest_pwm_signal" value="module.driver.timer.mode.shortest_pwm_signal_disabled"/>
+      <property id="module.driver.timer.period" value="1"/>
+      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_msec"/>
+      <property id="module.driver.timer.duty_cycle" value="50"/>
+      <property id="module.driver.timer.duty_cycle_unit" value="module.driver.timer.duty_cycle_unit.unit_percent"/>
+      <property id="module.driver.timer.autostart" value="module.driver.timer.autostart.false"/>
+      <property id="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.true"/>
+      <property id="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_low"/>
+      <property id="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.true"/>
+      <property id="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_low"/>
+      <property id="module.driver.timer.p_callback" value="timer_callback_turn"/>
+      <property id="module.driver.timer.irq_ipl" value="board.icu.common.irq.priority5"/>
+    </module>
+    <module id="module.driver.external_irq_on_icu.1605438794">
+      <property id="module.driver.external_irq.name" value="g_external_irq10"/>
+      <property id="module.driver.external_irq.channel" value="10"/>
+      <property id="module.driver.external_irq.trigger" value="module.driver.external_irq.trigger.trig_falling"/>
+      <property id="module.driver.external_irq.filter_enable" value="module.driver.external_irq.filter_enable.true"/>
+      <property id="module.driver.external_irq.pclk_div" value="module.driver.external_irq.pclk_div.pclk_div_by_64"/>
+      <property id="module.driver.external_irq.interrupt_enable" value="module.driver.external_irq.interrupt_enable.true"/>
+      <property id="module.driver.external_irq.p_callback" value="hall_sensor_pulses_callback"/>
+      <property id="module.driver.external_irq.irq_ipl" value="board.icu.common.irq.priority5"/>
+    </module>
     <context id="_hal.0">
       <stack module="module.driver.cgc_on_cgc.0"/>
       <stack module="module.driver.fmi_on_fmi.0"/>
@@ -341,12 +372,14 @@
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.timer_on_gpt.687846498"/>
       <stack module="module.driver.adc_on_adc.1776454736"/>
+      <stack module="module.driver.timer_on_gpt.1184676838"/>
+      <stack module="module.driver.external_irq_on_icu.1605438794"/>
     </context>
     <context id="rtos.threadx.thread.0">
       <property id="_symbol" value="blinky_thread"/>
       <property id="rtos.threadx.thread.name" value="Blinky Thread"/>
       <property id="rtos.threadx.thread.stack" value="1024"/>
-      <property id="rtos.threadx.thread.priority" value="9"/>
+      <property id="rtos.threadx.thread.priority" value="10"/>
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
       <property id="rtos.threadx.thread.timeslice" value="1"/>
     </context>
@@ -403,6 +436,14 @@
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
       <property id="rtos.threadx.thread.timeslice" value="1"/>
     </context>
+    <context id="rtos.threadx.thread.625743017">
+      <property id="_symbol" value="hall_effect_thread"/>
+      <property id="rtos.threadx.thread.name" value="HALL_EFFECT"/>
+      <property id="rtos.threadx.thread.stack" value="1024"/>
+      <property id="rtos.threadx.thread.priority" value="5"/>
+      <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
+      <property id="rtos.threadx.thread.timeslice" value="1"/>
+    </context>
     <config id="config.el.ux_v2"/>
     <config id="config.framework.sf_el_ux_comms_v2">
       <property id="config.framework.sf_comms.param_checking_enable" value="config.framework.sf_comms.param_checking_enable.bsp"/>
@@ -451,6 +492,9 @@
     </config>
     <config id="config.driver.gpt">
       <property id="config.driver.gpt.param_checking_enable" value="config.driver.gpt.param_checking_enable.bsp"/>
+    </config>
+    <config id="config.driver.icu">
+      <property id="config.driver.icu.param_checking_enable" value="config.driver.icu.param_checking_enable.bsp"/>
     </config>
     <config id="config.driver.fmi">
       <property id="config.driver.fmi.param_checking_enable" value="config.driver.fmi.param_checking_enable.bsp"/>

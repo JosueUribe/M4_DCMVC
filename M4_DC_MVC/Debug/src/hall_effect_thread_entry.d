@@ -1,6 +1,5 @@
-src/synergy_gen/usb_console_thread.o: \
- ../src/synergy_gen/usb_console_thread.c \
- ../src/synergy_gen/usb_console_thread.h \
+src/hall_effect_thread_entry.o: ../src/hall_effect_thread_entry.c \
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\src\synergy_gen/hall_effect_thread.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\bsp/bsp_api.h \
  c:\users\victoromar\desktop\diplomado\ en\ sw\ embebido\repositorio_proyecto_integrador\m4_dcmvc\m4_dc_mvc\synergy\ssp\inc\ssp_common_api.h \
  c:\users\victoromar\desktop\diplomado\ en\ sw\ embebido\repositorio_proyecto_integrador\m4_dcmvc\m4_dc_mvc\synergy\ssp\inc\ssp_version.h \
@@ -50,7 +49,8 @@ src/synergy_gen/usb_console_thread.o: \
  c:\users\victoromar\desktop\diplomado\ en\ sw\ embebido\repositorio_proyecto_integrador\m4_dcmvc\m4_dc_mvc\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\framework\el/tx_user.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\el/tx_cmsis.h \
- ../src/synergy_gen/hal_data.h ../src/synergy_gen/common_data.h \
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\src\synergy_gen/hal_data.h \
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\src\synergy_gen/common_data.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_ioport.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_elc.h \
@@ -78,12 +78,9 @@ src/synergy_gen/usb_console_thread.o: \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_adc.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
  C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_adc_api.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\instances/sf_el_ux_comms_v2.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\api/sf_comms_api.h \
- C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\framework/sf_el_ux_comms_cfg_v2.h
+ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h
 
-../src/synergy_gen/usb_console_thread.h:
+C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\src\synergy_gen/hall_effect_thread.h:
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\bsp/bsp_api.h:
 
@@ -183,9 +180,9 @@ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Int
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\el/tx_cmsis.h:
 
-../src/synergy_gen/hal_data.h:
+C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\src\synergy_gen/hal_data.h:
 
-../src/synergy_gen/common_data.h:
+C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\src\synergy_gen/common_data.h:
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_ioport.h:
 
@@ -242,9 +239,3 @@ C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Int
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_adc_api.h:
 
 C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\api/r_transfer_api.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\instances/sf_el_ux_comms_v2.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\api/sf_comms_api.h:
-
-C:\Users\VictorOmar\Desktop\Diplomado\ en\ SW\ embebido\Repositorio_Proyecto_Integrador\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\framework/sf_el_ux_comms_cfg_v2.h:

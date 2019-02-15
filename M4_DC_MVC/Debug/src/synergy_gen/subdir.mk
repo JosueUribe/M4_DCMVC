@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/synergy_gen/Hall_Effect_Thread.c \
 ../src/synergy_gen/adc_thread.c \
 ../src/synergy_gen/blinky_thread.c \
 ../src/synergy_gen/common_data.c \
@@ -15,6 +16,7 @@ C_SRCS += \
 ../src/synergy_gen/usb_console_thread.c 
 
 OBJS += \
+./src/synergy_gen/Hall_Effect_Thread.o \
 ./src/synergy_gen/adc_thread.o \
 ./src/synergy_gen/blinky_thread.o \
 ./src/synergy_gen/common_data.o \
@@ -26,6 +28,7 @@ OBJS += \
 ./src/synergy_gen/usb_console_thread.o 
 
 C_DEPS += \
+./src/synergy_gen/Hall_Effect_Thread.d \
 ./src/synergy_gen/adc_thread.d \
 ./src/synergy_gen/blinky_thread.d \
 ./src/synergy_gen/common_data.d \

@@ -16,7 +16,7 @@ IRQ0: IRQ08",""
 "P004","165","GPIO","GPIO26","","IRQ9-DS","Input mode","","","ADC1: AN00
 CMP0: IVCMP2
 IRQ0: IRQ09",""
-"P005","164","","GPIO25","","","Disabled","","","ADC1: AN01
+"P005","164","GPIO","GPIO25","","IRQ10-DS","Input mode","","","ADC1: AN01
 CMP0: IVCMP2
 IRQ0: IRQ10",""
 "P006","163","","GPIO24","","","Disabled","","","ADC1: AN02
