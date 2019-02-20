@@ -18,7 +18,7 @@ extern "C"
 {
 #endif
 /* External IRQ on ICU Instance. */
-extern const external_irq_instance_t g_external_irq10;
+extern const external_irq_instance_t g_external_irq08;
 #ifndef hall_sensor_pulses_callback
 void hall_sensor_pulses_callback(external_irq_callback_args_t *p_args);
 #endif

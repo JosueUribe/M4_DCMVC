@@ -97,7 +97,7 @@ void sf_comms_init0(void)
     }
 }
 TX_QUEUE g_cdc_queue;
-static uint8_t queue_memory_g_cdc_queue[100];
+static uint8_t queue_memory_g_cdc_queue[200];
 extern bool g_ssp_common_initialized;
 extern uint32_t g_ssp_common_thread_count;
 extern TX_SEMAPHORE g_ssp_common_initialized_semaphore;
@@ -109,7 +109,7 @@ void usb_console_thread_create(void)
 
     /* Initialize each kernel object. */
     UINT err_g_cdc_queue;
-    err_g_cdc_queue = tx_queue_create (&g_cdc_queue, (CHAR *) "CDC Queue", 10, &queue_memory_g_cdc_queue,
+    err_g_cdc_queue = tx_queue_create (&g_cdc_queue, (CHAR *) "CDC Queue", 16, &queue_memory_g_cdc_queue,
                                        sizeof(queue_memory_g_cdc_queue));
     if (TX_SUCCESS != err_g_cdc_queue)
     {

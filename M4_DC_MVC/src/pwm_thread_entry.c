@@ -24,7 +24,7 @@ extern TX_QUEUE g_cdc_queue;
 
  *===========================================================================*/
 static uint8_t duty_cycle = DEFAULT_DUTY_CYCLE;
-static char send_trace[30];  //to store debug strings
+static char send_trace[100];  //to store debug strings
 
 UINT TX_status_pwm = TX_SUCCESS;
 
@@ -52,11 +52,11 @@ void pwm_thread_entry(void)
        g_timer0.p_api->dutyCycleSet(g_timer0.p_ctrl, duty_cycle, TIMER_PWM_UNIT_PERCENT, CLOCK_B);
 
        /*Console traces*/
-       sprintf(send_trace, "Duty Cycle: %d\r", duty_cycle);
-       tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
+       /*sprintf(send_trace, "Duty Cycle: %d\r", duty_cycle);
+       tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);*/
 
 
-       tx_thread_sleep (1);
+       tx_thread_sleep (2);
      }
 }
 

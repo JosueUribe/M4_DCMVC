@@ -49,10 +49,10 @@ void blinky_thread_entry(void)
         /* Determine the next state of the LEDs */
         if(IOPORT_LEVEL_LOW == level) {
             level = IOPORT_LEVEL_HIGH;
-            sprintf(send_str, "LED LEVEL HIGH %d\r",counter );
+            /*sprintf(send_str, "LED LEVEL HIGH %d\r",counter );*/
         }   else  {
             level = IOPORT_LEVEL_LOW;
-            sprintf(send_str, "LED LEVEL LOW %d\r", counter);
+            /*sprintf(send_str, "LED LEVEL LOW %d\r", counter);*/
         }
         ++counter ;
 
@@ -63,7 +63,7 @@ void blinky_thread_entry(void)
         g_ioport.p_api->pinWrite(leds.p_leds[0], level);
 
        //TX_WAIT_FOREVER : This will block Blinky Thread until PC receive message.
-        tx_queue_send(&g_cdc_queue, send_str, delay);  // TX_WAIT_FOREVER);
+        /*tx_queue_send(&g_cdc_queue, send_str, delay);  // TX_WAIT_FOREVER);*/
 
         /* Delay */
         tx_thread_sleep (delay);

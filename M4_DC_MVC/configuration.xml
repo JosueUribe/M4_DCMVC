@@ -196,7 +196,7 @@
     </module>
     <module id="module.el.ux_device.904295866">
       <property id="module.el.ux_device.idVendor" value="0x045B"/>
-      <property id="module.el.ux_device.idProduct" value="0x0000"/>
+      <property id="module.el.ux_device.idProduct" value="0x5300"/>
       <property id="module.el.ux_device.bcdDevice" value="0x0000"/>
       <property id="module.el.ux_device.iManufacturer" value="0x00"/>
       <property id="module.el.ux_device.iProduct" value="0x00"/>
@@ -356,8 +356,8 @@
       <property id="module.driver.timer.irq_ipl" value="board.icu.common.irq.priority9"/>
     </module>
     <module id="module.driver.external_irq_on_icu.1182319165">
-      <property id="module.driver.external_irq.name" value="g_external_irq10"/>
-      <property id="module.driver.external_irq.channel" value="10"/>
+      <property id="module.driver.external_irq.name" value="g_external_irq08"/>
+      <property id="module.driver.external_irq.channel" value="8"/>
       <property id="module.driver.external_irq.trigger" value="module.driver.external_irq.trigger.trig_falling"/>
       <property id="module.driver.external_irq.filter_enable" value="module.driver.external_irq.filter_enable.true"/>
       <property id="module.driver.external_irq.pclk_div" value="module.driver.external_irq.pclk_div.pclk_div_by_64"/>
@@ -398,8 +398,8 @@
       <object id="rtos.threadx.object.queue.1504373909">
         <property id="rtos.threadx.object.queue.name" value="CDC Queue"/>
         <property id="rtos.threadx.object.queue.symbol" value="g_cdc_queue"/>
-        <property id="rtos.threadx.object.queue.msg_size" value="10"/>
-        <property id="rtos.threadx.object.queue.queue_size" value="100"/>
+        <property id="rtos.threadx.object.queue.msg_size" value="16"/>
+        <property id="rtos.threadx.object.queue.queue_size" value="200"/>
       </object>
     </context>
     <context id="rtos.threadx.thread.629159933">

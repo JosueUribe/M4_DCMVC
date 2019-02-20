@@ -8,24 +8,24 @@ static uint8_t hall_effect_thread_stack[1024] BSP_PLACE_IN_SECTION_V2(".stack.ha
 void tx_startup_err_callback(void *p_instance, void *p_data);
 void tx_startup_common_init(void);
 #if (4) != BSP_IRQ_DISABLED
-#if !defined(SSP_SUPPRESS_ISR_g_external_irq10) && !defined(SSP_SUPPRESS_ISR_ICU10)
-SSP_VECTOR_DEFINE( icu_irq_isr, ICU, IRQ10);
+#if !defined(SSP_SUPPRESS_ISR_g_external_irq08) && !defined(SSP_SUPPRESS_ISR_ICU8)
+SSP_VECTOR_DEFINE( icu_irq_isr, ICU, IRQ8);
 #endif
 #endif
-static icu_instance_ctrl_t g_external_irq10_ctrl;
-static const external_irq_cfg_t g_external_irq10_cfg =
-{ .channel = 10,
+static icu_instance_ctrl_t g_external_irq08_ctrl;
+static const external_irq_cfg_t g_external_irq08_cfg =
+{ .channel = 8,
   .trigger = EXTERNAL_IRQ_TRIG_FALLING,
   .filter_enable = true,
   .pclk_div = EXTERNAL_IRQ_PCLK_DIV_BY_64,
   .autostart = true,
   .p_callback = hall_sensor_pulses_callback,
-  .p_context = &g_external_irq10,
+  .p_context = &g_external_irq08,
   .p_extend = NULL,
   .irq_ipl = (4), };
 /* Instance structure to use this module. */
-const external_irq_instance_t g_external_irq10 =
-{ .p_ctrl = &g_external_irq10_ctrl, .p_cfg = &g_external_irq10_cfg, .p_api = &g_external_irq_on_icu };
+const external_irq_instance_t g_external_irq08 =
+{ .p_ctrl = &g_external_irq08_ctrl, .p_cfg = &g_external_irq08_cfg, .p_api = &g_external_irq_on_icu };
 #if (9) != BSP_IRQ_DISABLED
 #if !defined(SSP_SUPPRESS_ISR_g_timer1) && !defined(SSP_SUPPRESS_ISR_GPT6)
 SSP_VECTOR_DEFINE_CHAN(gpt_counter_overflow_isr, GPT, COUNTER_OVERFLOW, 6);

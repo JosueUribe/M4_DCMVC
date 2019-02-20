@@ -642,8 +642,8 @@ __root static const unsigned char device_framework_full_speed[] BSP_PLACE_IN_SEC
     0x40, /* 7 bMaxPacketSize0 */
     (uint8_t)(0x045B), /* 8 idVendor */
     (uint8_t)(0x045B >> 8), /* 9 idVendor */
-    (uint8_t)(0x0000), /* 10 idProduct */
-    (uint8_t)(0x0000 >> 8), /* 11 idProduct */
+    (uint8_t)(0x5300), /* 10 idProduct */
+    (uint8_t)(0x5300 >> 8), /* 11 idProduct */
     (uint8_t)(0x0000), /* 12 bcdDevice */
     (uint8_t)(0x0000 >> 8), /* 13 bcdDevice */
     0x00, /* 14 iManufacturer */
@@ -682,8 +682,8 @@ __root static const unsigned char device_framework_high_speed[] BSP_PLACE_IN_SEC
     0x40, /* 7 bMaxPacketSize0 */
     (uint8_t)(0x045B), /* 8 idVendor */
     (uint8_t)(0x045B >> 8), /* 9 idVendor */
-    (uint8_t)(0x0000), /* 10 idProduct */
-    (uint8_t)(0x0000 >> 8), /* 11 idProduct */
+    (uint8_t)(0x5300), /* 10 idProduct */
+    (uint8_t)(0x5300 >> 8), /* 11 idProduct */
     (uint8_t)(0x0000), /* 12 bcdDevice */
     (uint8_t)(0x0000 >> 8), /* 13 bcdDevice */
     0x00, /* 14 iManufacturer */

@@ -69,7 +69,7 @@ Synergy Configuration
       AVSSUSBHS 28 USBHS0_AVSSUSBHS - - - - - - - - 
       P000 169 ADC0_AN00 - - - "Analog mode" - - "ADC0: AN00; CMP0: IVCMP2; IRQ0: IRQ06" - 
       P001 168 GPIO - - None "Input mode" - - "ADC0: AN01; CMP0: IVCMP2; IRQ0: IRQ07" "This pin is used to monitor short circuit" 
-      P002 167 - - - - Disabled - - "ADC0: AN02; CMP0: IVCMP2; IRQ0: IRQ08" - 
+      P002 167 GPIO - - IRQ8-DS "Input mode" - - "ADC0: AN02; CMP0: IVCMP2; IRQ0: IRQ08" - 
       P003 166 - - - - Disabled - - "ADC0: PGAVSS0" - 
       P004 165 GPIO GPIO26 - IRQ9-DS "Input mode" - - "ADC1: AN00; CMP0: IVCMP2; IRQ0: IRQ09" - 
       P005 164 GPIO GPIO25 - IRQ10-DS "Input mode" - - "ADC1: AN01; CMP0: IVCMP2; IRQ0: IRQ10" - 
@@ -325,7 +325,7 @@ Synergy Configuration
         
         Instance "USBX Device Configuration"
           Vendor ID: 0x045B
-          Product ID: 0x0000
+          Product ID: 0x5300
           Device Release Number: 0x0000
           Index of Manufacturer String Descriptor: 0x00
           Index of Product String Descriptor: 0x00
@@ -370,8 +370,8 @@ Synergy Configuration
     Object "g_cdc_queue Queue"
       Name: CDC Queue
       Symbol: g_cdc_queue
-      Message Size (Words): 10
-      Queue Size (Bytes): 100
+      Message Size (Words): 16
+      Queue Size (Bytes): 200
       
   Thread "PWM"
     Symbol: pwm_thread
@@ -528,9 +528,9 @@ Synergy Configuration
       Callback: timer_callback_turn
       Overflow Interrupt Priority: Priority 9
       
-    Instance "g_external_irq10 External IRQ Driver on r_icu"
-      Name: g_external_irq10
-      Channel: 10
+    Instance "g_external_irq08 External IRQ Driver on r_icu"
+      Name: g_external_irq08
+      Channel: 8
       Trigger: Falling
       Digital Filtering: Enabled
       Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
