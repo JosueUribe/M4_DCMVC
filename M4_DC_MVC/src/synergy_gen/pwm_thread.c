@@ -20,7 +20,7 @@ static const timer_on_gpt_cfg_t g_timer0_extend =
   { .output_enabled = true, .stop_level = GPT_PIN_LEVEL_LOW },
   .shortest_pwm_signal = GPT_SHORTEST_LEVEL_OFF, };
 static const timer_cfg_t g_timer0_cfg =
-{ .mode = TIMER_MODE_PWM, .period = 10, .unit = TIMER_UNIT_FREQUENCY_HZ, .duty_cycle = 50, .duty_cycle_unit =
+{ .mode = TIMER_MODE_PWM, .period = 1, .unit = TIMER_UNIT_FREQUENCY_KHZ, .duty_cycle = 50, .duty_cycle_unit =
           TIMER_PWM_UNIT_PERCENT,
   .channel = 7, .autostart = false, .p_callback = NULL, .p_context = &g_timer0, .p_extend = &g_timer0_extend, .irq_ipl =
           (2), };

@@ -52,8 +52,8 @@ void pwm_thread_entry(void)
        g_timer0.p_api->dutyCycleSet(g_timer0.p_ctrl, duty_cycle, TIMER_PWM_UNIT_PERCENT, CLOCK_B);
 
        /*Console traces*/
-       /*sprintf(send_trace, "Duty Cycle: %d\r", duty_cycle);
-       tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);*/
+       sprintf(send_trace, "Duty Cycle: %d\r", duty_cycle);
+       tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
 
 
        tx_thread_sleep (2);

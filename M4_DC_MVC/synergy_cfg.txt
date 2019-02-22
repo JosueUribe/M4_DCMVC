@@ -72,7 +72,7 @@ Synergy Configuration
       P002 167 GPIO - - IRQ8-DS "Input mode" - - "ADC0: AN02; CMP0: IVCMP2; IRQ0: IRQ08" - 
       P003 166 - - - - Disabled - - "ADC0: PGAVSS0" - 
       P004 165 GPIO GPIO26 - IRQ9-DS "Input mode" - - "ADC1: AN00; CMP0: IVCMP2; IRQ0: IRQ09" - 
-      P005 164 GPIO GPIO25 - IRQ10-DS "Input mode" - - "ADC1: AN01; CMP0: IVCMP2; IRQ0: IRQ10" - 
+      P005 164 - GPIO25 - - Disabled - - "ADC1: AN01; CMP0: IVCMP2; IRQ0: IRQ10" - 
       P006 163 - GPIO24 - - Disabled - - "ADC1: AN02; CMP0: IVCMP2; IRQ0: IRQ11" - 
       P007 162 - - - - Disabled - - "ADC1: PGAVSS0" - 
       P008 161 - - - - Disabled - - "ADC0: AN03; IRQ0: IRQ12" - 
@@ -386,8 +386,8 @@ Synergy Configuration
       Channel: 7
       Mode: PWM
       Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
-      Period Value: 10
-      Period Unit: Hertz
+      Period Value: 1
+      Period Unit: Kilohertz
       Duty Cycle Value: 50
       Duty Cycle Unit: Unit Percent
       Auto Start: False

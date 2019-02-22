@@ -326,8 +326,8 @@
       <property id="module.driver.timer.channel" value="7"/>
       <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_pwm"/>
       <property id="module.driver.timer.shortest_pwm_signal" value="module.driver.timer.mode.shortest_pwm_signal_disabled"/>
-      <property id="module.driver.timer.period" value="10"/>
-      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_frequency_hz"/>
+      <property id="module.driver.timer.period" value="1"/>
+      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_frequency_khz"/>
       <property id="module.driver.timer.duty_cycle" value="50"/>
       <property id="module.driver.timer.duty_cycle_unit" value="module.driver.timer.unit.unit_percent"/>
       <property id="module.driver.timer.autostart" value="module.driver.timer.autostart.false"/>

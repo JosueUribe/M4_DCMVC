@@ -57,7 +57,7 @@ void hall_effect_thread_entry(void)
             /*Send value to PID module*/
 
             /*print console debug traces*/
-            sprintf(send_trace, "Elapsed Time: %d, RPMs: %d\r", elapsed_time_ms, rpm);
+            sprintf(send_trace, "Elap Time ms: %d, RPMs: %d\r", elapsed_time_ms, rpm);
             tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
         }
         tx_thread_sleep (1);
@@ -72,7 +72,7 @@ void hall_effect_thread_entry(void)
 uint16_t calculate_rpm(void)
 {
     float elapsed_time_seconds =(elapsed_time_ms)/(1000.0);
-    float rev_per_min = (((SECONDS_PER_MINUTE)*(PULSES_PER_TURN))/(elapsed_time_seconds));
+    float rev_per_min = ((SECONDS_PER_MINUTE)/(elapsed_time_seconds));
     uint16_t rev_rouded = (uint16_t)ceil(roundf(rev_per_min));
     return rev_rouded;
 }
@@ -96,7 +96,7 @@ void hall_sensor_pulses_callback(external_irq_callback_args_t *p_args)
     {
         elapsed_time_ms = (uint16_t)(timer_counts*time_ms);
         elapsed_time_flag = true;
-        sprintf(send_trace, "flag: %d\r",elapsed_time_flag);
+        /*sprintf(send_trace, "4 pulses\r");*/
         tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
     }
 
@@ -115,6 +115,9 @@ void hall_sensor_pulses_callback(external_irq_callback_args_t *p_args)
  *
  * - 16-Feb-2019 Victor Alvarado Rev 2
  *   - Task: Read hall effect pulses and fix timing
+ *
+ * - 22-Feb-2019 Victor Alvarado Rev 3
+ *   - Task: Fix in RPM calculus
  *
  *===========================================================================*/
 
