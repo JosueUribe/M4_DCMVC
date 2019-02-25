@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lDSP_Lib -ltx -lux -lux_device_class_cdc_acm
+LIBS := -lDSP_Lib -ltx -lux -lux_device_class_cdc_acm -lgx
 
