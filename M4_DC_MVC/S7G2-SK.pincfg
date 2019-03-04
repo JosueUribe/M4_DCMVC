@@ -912,4 +912,5 @@
   <v1:configSetting configurationId="p610.gpio_mode" altId="p610.gpio_mode.gpio_mode_out.low"/>
   <v1:configSetting configurationId="p611.gpio_mode" altId="p611.gpio_mode.gpio_mode_out.low"/>
   <v1:configSetting configurationId="glcdc0.lcd_data21" altId="glcdc0.lcd_data21.none"/>
+  <v1:configSetting configurationId="adc0.an03" altId="adc0.an03.none"/>
 </v1:pinSettings>

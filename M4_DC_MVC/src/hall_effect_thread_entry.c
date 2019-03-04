@@ -2,6 +2,7 @@
  * Header Files
  *===========================================================================*/
 #include <hall_effect_thread.h>
+#include "sf_message_payloads.h"
 #include "math.h"
 
 /*!===========================================================================*
@@ -10,11 +11,14 @@
 #define PERIOD_TIMER_VALUE_MS     1
 #define SECONDS_PER_MINUTE        60.0
 #define PULSES_PER_TURN           4.0
+#define HALL_EFFECT_THREAD_SLEEP  1
 
 /*!===========================================================================*
  * External Type Declarations
  *===========================================================================*/
 extern TX_QUEUE g_cdc_queue;
+extern const sf_message_post_cfg_t g_post_cfg;
+extern const sf_message_acquire_cfg_t g_acquire_cfg;
 
 /*!===========================================================================*
  * Global Type Declarations
@@ -26,8 +30,10 @@ static uint16_t pulses_count = 0;
 static bool elapsed_time_flag = false;
 static char send_trace[100];  //to store debug strings
 
+sf_message_post_err_t post_err;
+
 /*!===========================================================================*
- * Function prototypes
+ * Local Type Declarations
  *===========================================================================*/
 uint16_t calculate_rpm(void);
 
@@ -59,8 +65,37 @@ void hall_effect_thread_entry(void)
             /*print console debug traces*/
             sprintf(send_trace, "Elap Time ms: %d, RPMs: %d\r", elapsed_time_ms, rpm);
             tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
+
+            /* Pointers to event message and data */
+            sf_message_header_t *p_message  = NULL;
+            sf_message_payload_t *p_payload = NULL;
+
+            /* Get buffer from Messaging framework. */
+            ssp_err_t err = g_sf_message0.p_api->bufferAcquire(g_sf_message0.p_ctrl, (sf_message_header_t **) &p_message, &g_acquire_cfg, TX_NO_WAIT);
+
+            /* Trap if error */
+            if (SSP_SUCCESS != err)
+            {
+                while(1);
+            }
+            else
+            {
+                /* Creating message in buffer. */
+                p_message->event_b.class_code = SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK;
+                p_message->event_b.code  = SF_MESSAGE_EVENT_HALL_EFFECT_RPMS_MESSAGE;
+                p_payload = (sf_message_payload_t*)(p_message+1);
+                p_payload->hall_effect_feedback_payload.rpms_to_gui = rpm;
+
+                /* Posting message. */
+                err = g_sf_message0.p_api->post(g_sf_message0.p_ctrl, (sf_message_header_t *) p_message, &g_post_cfg, &post_err, TX_NO_WAIT);
+
+                if (SSP_SUCCESS != err)
+                {
+                    while(1);
+                }
+            }
         }
-        tx_thread_sleep (1);
+        tx_thread_sleep (HALL_EFFECT_THREAD_SLEEP);
     }
 }
 
@@ -79,8 +114,7 @@ uint16_t calculate_rpm(void)
 
 
 /*!===========================================================================*
- * Callback Declarations
-
+ * Callback Definitions
  *===========================================================================*/
 void timer_callback_turn(timer_callback_args_t  *p_args)
 {
@@ -99,7 +133,6 @@ void hall_sensor_pulses_callback(external_irq_callback_args_t *p_args)
         /*sprintf(send_trace, "4 pulses\r");*/
         tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
     }
-
 }
 
 
@@ -118,6 +151,9 @@ void hall_sensor_pulses_callback(external_irq_callback_args_t *p_args)
  *
  * - 22-Feb-2019 Victor Alvarado Rev 3
  *   - Task: Fix in RPM calculus
+ *
+ * - 03-Mar-2019 Gpe. Josue Uribe Rev 4
+ *   - Task: Post RPMs to the Main Thread
  *
  *===========================================================================*/
 

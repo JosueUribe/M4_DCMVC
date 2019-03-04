@@ -39,10 +39,6 @@ static uint8_t duty_cycle = DEFAULT_DUTY_CYCLE;
 static uint16_t received_adc_value = DEFAULT_ADC_VALUE; /* to store queued value from ADC thread */
 static char send_trace[100]; /* to store debug strings */
 
-/* Pointers to event message and data */
-sf_message_header_t *p_message  = NULL;
-sf_message_payload_t *p_payload = NULL;
-
 UINT tx_status_pwm = TX_SUCCESS;
 
 void pwm_thread_entry(void)
@@ -70,13 +66,15 @@ void pwm_thread_entry(void)
        sprintf(send_trace, "Duty Cycle: %d\r", duty_cycle);
        tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
 
+       /* Pointers to event message and data */
+       sf_message_header_t *p_message  = NULL;
+       sf_message_payload_t *p_payload = NULL;
        /* Get buffer from Messaging framework. */
        ssp_err_t err = g_sf_message0.p_api->bufferAcquire(g_sf_message0.p_ctrl, (sf_message_header_t **) &p_message, &g_acquire_cfg, TX_NO_WAIT);
 
-       /* Trap if error */
        if (SSP_SUCCESS != err)
        {
-           while(1);
+           while(1); /* Trap if error */
        }
        else
        {
@@ -118,4 +116,6 @@ void pwm_thread_entry(void)
  * - 25-Feb-2019 Gpe. Josue Uribe  Rev 4
  *   - Task: Use SSP Messaging framework to update duty cycle on the GUI.
  *
+ * - 03-Mar-2019 Gpe. Josue Uribe  Rev 5
+ *   - Task: Include pointers to Event Message and data in the infinite loop.
  *===========================================================================*/

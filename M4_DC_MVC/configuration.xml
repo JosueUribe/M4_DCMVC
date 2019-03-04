@@ -229,14 +229,14 @@
   </synergyComponentSelection>
   <synergyIcuConfiguration/>
   <synergyMessagingConfiguration>
-    <event display="Update speed" value="SF_MESSAGE_EVENT_UPDATE_SPEED"/>
     <event display="Update duty cycle" value="SF_MESSAGE_EVENT_UPDATE_DUTY_CYCLE"/>
-    <eventClass display="ADC_data" header="adc_data_api.h" id="eventClass.1991764461" payload="adc_data_payload" payloadType="adc_data_payload_t" value="SF_MESSAGE_EVENT_CLASS_ADC_DATA"/>
+    <event display="Hall effect rpms message" value="SF_MESSAGE_EVENT_HALL_EFFECT_RPMS_MESSAGE"/>
     <eventClass display="PWM_data" header="pwm_data_api.h" id="eventClass.1505151151" payload="pwm_data_payload" payloadType="pwm_data_payload_t" value="SF_MESSAGE_EVENT_CLASS_PWM_DATA"/>
+    <eventClass display="Hall_effect_feedback" header="hall_effect_feedback_api.h" id="eventClass.354113003" payload="hall_effect_feedback_payload" payloadType="hall_effect_feedback_payload_t" value="SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK"/>
     <subscriber context="rtos.threadx.thread.246016058" end="0" id="subscriber.1064569996" start="0">
       <subscribe eventClass="module.framework.sf_touch_panel.eventClass.eventClassTouch"/>
-      <subscribe eventClass="eventClass.1991764461"/>
       <subscribe eventClass="eventClass.1505151151"/>
+      <subscribe eventClass="eventClass.354113003"/>
     </subscriber>
   </synergyMessagingConfiguration>
   <synergyModuleConfiguration>

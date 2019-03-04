@@ -916,20 +916,13 @@ Synergy Configuration
       Priority inheritance: Disabled
       
   Messaging
-    Event "Update speed"
-      Symbol: SF_MESSAGE_EVENT_UPDATE_SPEED
-      Name: Update speed
-      
     Event "Update duty cycle"
       Symbol: SF_MESSAGE_EVENT_UPDATE_DUTY_CYCLE
       Name: Update duty cycle
       
-    Event Class "ADC_data"
-      Symbol: SF_MESSAGE_EVENT_CLASS_ADC_DATA
-      Name: ADC_data
-      Payload header file: adc_data_api.h
-      Payload: adc_data_payload
-      Payload type: adc_data_payload_t
+    Event "Hall effect rpms message"
+      Symbol: SF_MESSAGE_EVENT_HALL_EFFECT_RPMS_MESSAGE
+      Name: Hall effect rpms message
       
     Event Class "PWM_data"
       Symbol: SF_MESSAGE_EVENT_CLASS_PWM_DATA
@@ -938,8 +931,15 @@ Synergy Configuration
       Payload: pwm_data_payload
       Payload type: pwm_data_payload_t
       
+    Event Class "Hall_effect_feedback"
+      Symbol: SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK
+      Name: Hall_effect_feedback
+      Payload header file: hall_effect_feedback_api.h
+      Payload: hall_effect_feedback_payload
+      Payload type: hall_effect_feedback_payload_t
+      
     Subscriber "Main Thread" 0 0
       Event Class "Touch"
-      Event Class "ADC_data"
       Event Class "PWM_data"
+      Event Class "Hall_effect_feedback"
       
