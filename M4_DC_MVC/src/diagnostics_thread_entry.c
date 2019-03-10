@@ -6,6 +6,7 @@
 /*!===========================================================================*
  * Local Preprocessor #define Constants
  *===========================================================================*/
+#define DIAGNOSTICS_THREAD_SLEEP    10 /* Milliseconds to sleep */
 
 /*!===========================================================================*
  * External Type Declarations
@@ -13,28 +14,40 @@
 
 /*!===========================================================================*
  * Local Type Declarations
-
  *===========================================================================*/
-ioport_level_t button_level = IOPORT_LEVEL_LOW;
-bsp_leds_t Leds;
+static ioport_level_t battery_shortcut = IOPORT_LEVEL_LOW;
+static ioport_level_t ground_shortcut = IOPORT_LEVEL_LOW;
+
+bsp_leds_t leds;
 
 /* diagnostics thread entry function */
 void diagnostics_thread_entry(void)
 {
-    R_BSP_LedsGet(&Leds);
+    R_BSP_LedsGet(&leds);
     while(1)
     {
-        g_ioport.p_api->pinRead(IOPORT_PORT_00_PIN_01,&button_level);
-                if(IOPORT_LEVEL_HIGH == button_level)
-                {
-                    g_ioport.p_api->pinWrite(Leds.p_leds[1], IOPORT_LEVEL_HIGH);
-                }
-                else
-                {
-                    g_ioport.p_api->pinWrite(Leds.p_leds[1], IOPORT_LEVEL_LOW);
-                }
+        g_ioport.p_api->pinRead(IOPORT_PORT_06_PIN_14,&ground_shortcut);
+        g_ioport.p_api->pinRead(IOPORT_PORT_06_PIN_13,&battery_shortcut);
 
-        tx_thread_sleep (1);
+        if(ground_shortcut)
+        {
+            g_ioport.p_api->pinWrite(leds.p_leds[1], IOPORT_LEVEL_LOW);
+        }
+        else
+        {
+            g_ioport.p_api->pinWrite(leds.p_leds[1], IOPORT_LEVEL_HIGH);
+        }
+
+        if(battery_shortcut)
+        {
+            g_ioport.p_api->pinWrite(leds.p_leds[2], IOPORT_LEVEL_LOW);
+        }
+        else
+        {
+            g_ioport.p_api->pinWrite(leds.p_leds[2], IOPORT_LEVEL_HIGH);
+        }
+
+        tx_thread_sleep (DIAGNOSTICS_THREAD_SLEEP);
     }
 }
 
@@ -46,5 +59,8 @@ void diagnostics_thread_entry(void)
  *
  * - 08-Feb-2019 Victor Alvarado  Rev 1
  *   - Task: Initial file.
+ *
+ *- 09-March-2019  Gpe. Josue Uribe Rev 2
+ *   - Task: Update ports and pins for shortcut detection.
  *
  *===========================================================================*/

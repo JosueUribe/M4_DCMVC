@@ -491,8 +491,8 @@ GLCDC0: LCD_DATA06",""
 GLCDC0: LCD_DATA05",""
 "P611","102","GPIO","","Low","","Output mode (Initial Low)","CMOS","None","BUS0: SDCS",""
 "P612","103","","","","","Disabled","","","BUS0: D8_DQ8",""
-"P613","104","GPIO","GPIO37","","","Input mode","","None","BUS0: D9_DQ9",""
-"P614","105","GPIO","GPIO38","","","Input mode","","None","BUS0: D10_DQ10",""
+"P613","104","GPIO","GPIO37","","","Input mode","","input pull-up","BUS0: D9_DQ9",""
+"P614","105","GPIO","GPIO38","","","Input mode","","input pull-up","BUS0: D10_DQ10",""
 "P615","106","GLCDC0_LCD_DATA10","GLCD_Controller__Pin_Option_B_LCD_DATA10_B","High","","Peripheral mode","CMOS","None","GLCDC0: LCD_DATA10",""
 "P700","8","RMII_TXD0","Ethernet_Controller_1_RMII_RMII1_TXD0","High","","Peripheral mode","CMOS","None","ETHERC1: TXD0
 GPT5: GTIOCA

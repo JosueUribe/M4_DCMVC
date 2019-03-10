@@ -326,11 +326,11 @@ const ioport_pin_cfg_t g_bsp_pin_cfg_data[] = {
 	},
 	{
 		.pin = IOPORT_PORT_06_PIN_13,
-		.pin_cfg = (IOPORT_CFG_PORT_DIRECTION_INPUT),
+		.pin_cfg = (IOPORT_CFG_PORT_DIRECTION_INPUT | IOPORT_CFG_PULLUP_ENABLE),
 	},
 	{
 		.pin = IOPORT_PORT_06_PIN_14,
-		.pin_cfg = (IOPORT_CFG_PORT_DIRECTION_INPUT),
+		.pin_cfg = (IOPORT_CFG_PORT_DIRECTION_INPUT | IOPORT_CFG_PULLUP_ENABLE),
 	},
 	{
 		.pin = IOPORT_PORT_06_PIN_15,

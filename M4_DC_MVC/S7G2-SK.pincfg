@@ -913,4 +913,7 @@
   <v1:configSetting configurationId="p611.gpio_mode" altId="p611.gpio_mode.gpio_mode_out.low"/>
   <v1:configSetting configurationId="glcdc0.lcd_data21" altId="glcdc0.lcd_data21.none"/>
   <v1:configSetting configurationId="adc0.an03" altId="adc0.an03.none"/>
+  <v1:configSetting configurationId="p605.gpio_pupd" altId="p605.gpio_pupd.gpio_pupd_no_ip_pull"/>
+  <v1:configSetting configurationId="p613.gpio_pupd" altId="p613.gpio_pupd.gpio_pupd_ip_up"/>
+  <v1:configSetting configurationId="p614.gpio_pupd" altId="p614.gpio_pupd.gpio_pupd_ip_up"/>
 </v1:pinSettings>
