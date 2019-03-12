@@ -12,6 +12,7 @@
 #define DEFAULT_ADC_VALUE         512
 #define DELTA_DUTY                  5
 #define PWM_THREAD_SLEEP            2 /* Milliseconds to sleep */
+#define INITIAL_RPMS               40
 
 
 /*!===========================================================================*
@@ -20,6 +21,8 @@
 extern TX_QUEUE g_cdc_queue;
 extern const sf_message_post_cfg_t g_post_cfg;
 extern const sf_message_acquire_cfg_t g_acquire_cfg;
+
+double d_c_from_polynomial(int rev_per_minute);
 
 const sf_message_acquire_cfg_t g_acquire_cfg =
 {
@@ -60,6 +63,8 @@ void pwm_thread_entry(void)
 
        duty_cycle = (uint8_t)(received_adc_value * 100 / 1023);   //convert adc value to percentage value
 
+       /*duty_cycle_to_motor = d_c_from_polynomial(rpms_from_PID);*/
+
        g_timer0.p_api->dutyCycleSet(g_timer0.p_ctrl, duty_cycle, TIMER_PWM_UNIT_PERCENT, CLOCK_B);
 
        /*Console traces*/
@@ -97,6 +102,17 @@ void pwm_thread_entry(void)
      }
 }
 
+double d_c_from_polynomial(int rev_per_minute)
+{
+    double rpms = (double)(rev_per_minute);
+    double duty_cycle = 0;
+
+    if (INITIAL_RPMS < rpms)
+    {
+        duty_cycle = (double)(((-1e-5)*rpms*rpms*rpms)+(4.5e-3*rpms*rpms)-(6.6e-3*rpms)+10.155);
+    }
+    return duty_cycle;
+}
 
 /*!===========================================================================
  *
@@ -118,4 +134,7 @@ void pwm_thread_entry(void)
  *
  * - 03-Mar-2019 Gpe. Josue Uribe  Rev 5
  *   - Task: Include pointers to Event Message and data in the infinite loop.
+ *
+ * - 11-Mar-2019 Victor Alvarado Rev 6
+ *   - Task: Add polynomial to convert rpms from PID to duty cycle
  *===========================================================================*/
