@@ -11,9 +11,14 @@
 #define DEFAULT_DUTY_CYCLE          5
 #define DEFAULT_ADC_VALUE         512
 #define PWM_THREAD_SLEEP            2 /* Milliseconds to sleep */
+<<<<<<< HEAD
 #define MAX_DUTY_CYCLE            100
 #define TEN_BIT_RESOLUTION       1023
 #define TRACE_BUFFER_SIZE         100
+=======
+#define INITIAL_RPMS               40
+
+>>>>>>> 926083b9c54e42d07127e3c643db21f64beecf7a
 
 /*!===========================================================================*
  * External Type Declarations
@@ -21,6 +26,8 @@
 extern TX_QUEUE g_cdc_queue;
 extern const sf_message_post_cfg_t g_post_cfg;
 extern const sf_message_acquire_cfg_t g_acquire_cfg;
+
+double d_c_from_polynomial(int rev_per_minute);
 
 const sf_message_acquire_cfg_t g_acquire_cfg =
 {
@@ -63,8 +70,15 @@ void pwm_thread_entry(void)
            tx_queue_send(&g_cdc_queue, send_trace, TX_NO_WAIT);
        }
 
+<<<<<<< HEAD
        duty_cycle = (uint8_t)(received_adc_value * MAX_DUTY_CYCLE / TEN_BIT_RESOLUTION); /* convert adc value to percentage value */
        inverted_duty_cycle = MAX_DUTY_CYCLE - duty_cycle; /* Invert duty cycle value to appropriately show percentage on the GUI */
+=======
+       duty_cycle = (uint8_t)(received_adc_value * 100 / 1023);   //convert adc value to percentage value
+
+       /*duty_cycle_to_motor = d_c_from_polynomial(rpms_from_PID);*/
+
+>>>>>>> 926083b9c54e42d07127e3c643db21f64beecf7a
        g_timer0.p_api->dutyCycleSet(g_timer0.p_ctrl, duty_cycle, TIMER_PWM_UNIT_PERCENT, CLOCK_B);
 
        /*Console traces*/
@@ -99,6 +113,17 @@ void pwm_thread_entry(void)
      }
 }
 
+double d_c_from_polynomial(int rev_per_minute)
+{
+    double rpms = (double)(rev_per_minute);
+    double duty_cycle = 0;
+
+    if (INITIAL_RPMS < rpms)
+    {
+        duty_cycle = (double)(((-1e-5)*rpms*rpms*rpms)+(4.5e-3*rpms*rpms)-(6.6e-3*rpms)+10.155);
+    }
+    return duty_cycle;
+}
 
 /*!===========================================================================
  *
@@ -121,7 +146,12 @@ void pwm_thread_entry(void)
  * - 03-Mar-2019 Gpe. Josue Uribe  Rev 5
  *   - Task: Include pointers to Event Message and data in the infinite loop.
  *
+<<<<<<< HEAD
  * - 11-Mar-2019 Gpe. Josue Uribe  Rev 6
  *   - Task: Eliminate magic numbers and invert duty cycle value to properly show the result on the GUI.
  *
+=======
+ * - 11-Mar-2019 Victor Alvarado Rev 6
+ *   - Task: Add polynomial to convert rpms from PID to duty cycle
+>>>>>>> 926083b9c54e42d07127e3c643db21f64beecf7a
  *===========================================================================*/

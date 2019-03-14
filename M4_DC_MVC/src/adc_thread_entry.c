@@ -6,7 +6,7 @@
 #define DEFAULT_DUTY_CYCLE   5
 #define MAX_DIGITAL_VALUE    1023
 #define MAX_PERCENTAGE       100
-#define INERTIAL_DUTY_CYCLE  10
+#define INERTIAL_DUTY_CYCLE  16
 
 /*!===========================================================================*
  * External Type Declarations
@@ -78,7 +78,7 @@ double rmp_from_polynomial(int duty_c)
 
     if (INERTIAL_DUTY_CYCLE < duty_c)
     {
-        rev = (double)(((5e-4)*d_c*d_c*d_c)-(0.19*d_c*d_c)+(54.703*d_c)-518.13);
+        rev = (double)(((3e-4)*d_c*d_c*d_c)-(0.056*d_c*d_c)+(5.0976*d_c)-36.655);
     }
     return rev;
 }
