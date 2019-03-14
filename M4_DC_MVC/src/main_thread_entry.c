@@ -31,7 +31,9 @@ void g_lcd_spi_callback(spi_callback_args_t * p_args);
 static system_state_t g_system_state =
 {
     .pwm_duty_cycle_data  = 0,
-    .rpms_speed_data      = 0
+    .rpms_speed_data      = 0,
+    .ground_short_data    = IOPORT_LEVEL_LOW,
+    .battery_short_data   = IOPORT_LEVEL_LOW
 };
 
 /***********************************************************************************************************************
@@ -40,6 +42,9 @@ static system_state_t g_system_state =
 static GX_EVENT g_gx_event;
 static sf_message_payload_t* p_duty_cycle_message;
 static sf_message_payload_t* p_rpms_speed_message;
+static sf_message_payload_t* p_ground_shortcut_message;
+static sf_message_payload_t* p_battery_shortcut_message;
+
 static system_payload_t    message_to_gx;
 
 GX_WINDOW_ROOT * p_window_root;
@@ -197,6 +202,31 @@ void main_thread_entry(void)
 		        }
 		        break;
 		    }
+		    case SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA:
+		    {
+		        switch(p_message->event_b.code)
+		        {
+		            case SF_MESSAGE_EVENT_GROUND_SHORTCUT:
+		            {
+		                 p_ground_shortcut_message = (sf_message_payload_t*)(p_message+1);
+		                 g_system_state.ground_short_data = p_ground_shortcut_message->diagnostics_data_payload.ground_short;
+		                 send_hmi_message(GXEVENT_MSG_REFRESH_SYSTEM_DATA);
+		                 break;
+		            }
+		            case SF_MESSAGE_EVENT_BATTERY_SHORTCUT:
+		            {
+		                p_battery_shortcut_message = (sf_message_payload_t*)(p_message+1);
+		                g_system_state.battery_short_data = p_battery_shortcut_message->diagnostics_data_payload.battery_short;
+		                send_hmi_message(GXEVENT_MSG_REFRESH_SYSTEM_DATA);
+		                break;
+		            }
+		            default:
+		            {
+		                 break;
+		            }
+		        }
+		        break;
+		    }
 
 		    default:
 		    {
@@ -300,6 +330,9 @@ void g_lcd_spi_callback(spi_callback_args_t * p_args)
  *   - Task: Initial main_thread_entry file.
  *
  * - 03-Mar-2019 Gpe. Josue Uribe Rev 2
- *   - Task: Post RPMs to the GUI
+ *   - Task: Post RPMs to the GUI.
+ *
+ * - 12-Mar-2019 Gpe. Josue Uribe  Rev 3
+ *   - Task: Get shortcut data from diagnostics thread and sent gx event.
  *
  *===========================================================================*/

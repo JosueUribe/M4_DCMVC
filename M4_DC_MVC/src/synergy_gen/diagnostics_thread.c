@@ -20,7 +20,7 @@ void diagnostics_thread_create(void)
 
     UINT err;
     err = tx_thread_create (&diagnostics_thread, (CHAR *) "DIAGNOSTICS", diagnostics_thread_func, (ULONG) NULL,
-                            &diagnostics_thread_stack, 1024, 9, 9, 1, TX_AUTO_START);
+                            &diagnostics_thread_stack, 1024, 6, 6, 1, TX_AUTO_START);
     if (TX_SUCCESS != err)
     {
         tx_startup_err_callback (&diagnostics_thread, 0);

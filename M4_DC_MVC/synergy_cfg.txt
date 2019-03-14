@@ -543,7 +543,7 @@ Synergy Configuration
     Symbol: diagnostics_thread
     Name: DIAGNOSTICS
     Stack size (bytes): 1024
-    Priority: 9
+    Priority: 6
     Auto start: Enabled
     Time slicing interval (ticks): 1
     
@@ -924,6 +924,14 @@ Synergy Configuration
       Symbol: SF_MESSAGE_EVENT_HALL_EFFECT_RPMS_MESSAGE
       Name: Hall effect rpms message
       
+    Event "Battery shortcut"
+      Symbol: SF_MESSAGE_EVENT_BATTERY_SHORTCUT
+      Name: Battery shortcut
+      
+    Event "Ground shortcut"
+      Symbol: SF_MESSAGE_EVENT_GROUND_SHORTCUT
+      Name: Ground shortcut
+      
     Event Class "PWM_data"
       Symbol: SF_MESSAGE_EVENT_CLASS_PWM_DATA
       Name: PWM_data
@@ -938,8 +946,16 @@ Synergy Configuration
       Payload: hall_effect_feedback_payload
       Payload type: hall_effect_feedback_payload_t
       
+    Event Class "Diagnostics_data"
+      Symbol: SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA
+      Name: Diagnostics_data
+      Payload header file: diagnostics_data_api.h
+      Payload: diagnostics_data_payload
+      Payload type: diagnostics_data_payload_t
+      
     Subscriber "Main Thread" 0 0
       Event Class "Touch"
       Event Class "PWM_data"
       Event Class "Hall_effect_feedback"
+      Event Class "Diagnostics_data"
       

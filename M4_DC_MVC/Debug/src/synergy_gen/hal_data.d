@@ -72,6 +72,7 @@ src/synergy_gen/hal_data.o: ../src/synergy_gen/hal_data.c \
  C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\framework\api/sf_touch_panel_api.h \
  C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\src/pwm_data_api.h \
  C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\src/hall_effect_feedback_api.h \
+ C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\src/diagnostics_data_api.h \
  C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_ioport.h \
  C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\synergy_cfg\ssp_cfg\driver/r_ioport_cfg.h \
  C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_elc.h \
@@ -237,6 +238,8 @@ C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc
 C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\src/pwm_data_api.h:
 
 C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\src/hall_effect_feedback_api.h:
+
+C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\src/diagnostics_data_api.h:
 
 C:\Users\uribe\Documents\Files\CESEQ\M4_DCMVC\M4_DCMVC\M4_DC_MVC\synergy\ssp\inc\driver\instances/r_ioport.h:
 

@@ -19,6 +19,8 @@ typedef struct st_system_state
 {
     uint8_t             pwm_duty_cycle_data;
     uint16_t            rpms_speed_data;
+    ioport_level_t      ground_short_data;
+    ioport_level_t      battery_short_data;
 } system_state_t;
 
 typedef struct st_system_payload
@@ -40,5 +42,8 @@ typedef struct st_system_payload
  *
  * - 03-Mar-2019 Gpe. Josue Uribe  Rev 2
  *   - Task: Make use of the ThreadX block memory pool and pass the rpms_speed_data data to the GUI.
+ *
+ * - 12-Mar-2019 Gpe. Josue Uribe  Rev 3
+ *   - Task: Declare shortcut variables ground_short_data, battery_short_data.
  *
  *===========================================================================*/

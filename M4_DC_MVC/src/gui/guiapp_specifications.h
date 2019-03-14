@@ -6,7 +6,7 @@
 /*  www.expresslogic.com.                                                      */
 /*                                                                             */
 /*  GUIX Studio Revision 5.4.1.1                                               */
-/*  Date (dd.mm.yyyy): 11. 2.2019   Time (hh:mm): 01:15                        */
+/*  Date (dd.mm.yyyy): 13. 3.2019   Time (hh:mm): 01:21                        */
 /*******************************************************************************/
 
 
@@ -42,7 +42,8 @@ extern   "C" {
 #define ID_WINDOWCHANGER_MAIN 18
 #define ID_BATTERY_SHORTCUT 19
 #define ID_GROUND_SHORTCUT 20
-#define ID_WINDOW_GROUND_SHORTCUT 21
+#define ID_WINDOW_BATTERY_SHORTCUT 21
+#define ID_WINDOW_GROUND_SHORTCUT 22
 
 #define GX_ACTION_FLAG_DYNAMIC_TARGET 1
 

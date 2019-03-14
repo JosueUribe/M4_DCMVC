@@ -23,10 +23,16 @@ static sf_message_subscriber_t *gp_group_SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEED
 static sf_message_subscriber_list_t g_list_SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK =
 { .event_class = SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK, .number_of_nodes = 1, .pp_subscriber_group =
           gp_group_SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK };
+static sf_message_subscriber_t *gp_group_SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA[] =
+{ &main_thread_message_queue_0_0, };
+static sf_message_subscriber_list_t g_list_SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA =
+{ .event_class = SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA, .number_of_nodes = 1, .pp_subscriber_group =
+          gp_group_SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA };
 sf_message_subscriber_list_t *p_subscriber_lists[] =
 { &g_list_SF_MESSAGE_EVENT_CLASS_TOUCH,
   &g_list_SF_MESSAGE_EVENT_CLASS_PWM_DATA,
   &g_list_SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK,
+  &g_list_SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA,
   NULL };
 void g_message_init(void);
 void g_message_init(void)

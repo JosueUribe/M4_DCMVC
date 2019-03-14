@@ -231,12 +231,16 @@
   <synergyMessagingConfiguration>
     <event display="Update duty cycle" value="SF_MESSAGE_EVENT_UPDATE_DUTY_CYCLE"/>
     <event display="Hall effect rpms message" value="SF_MESSAGE_EVENT_HALL_EFFECT_RPMS_MESSAGE"/>
+    <event display="Battery shortcut" value="SF_MESSAGE_EVENT_BATTERY_SHORTCUT"/>
+    <event display="Ground shortcut" value="SF_MESSAGE_EVENT_GROUND_SHORTCUT"/>
     <eventClass display="PWM_data" header="pwm_data_api.h" id="eventClass.1505151151" payload="pwm_data_payload" payloadType="pwm_data_payload_t" value="SF_MESSAGE_EVENT_CLASS_PWM_DATA"/>
     <eventClass display="Hall_effect_feedback" header="hall_effect_feedback_api.h" id="eventClass.354113003" payload="hall_effect_feedback_payload" payloadType="hall_effect_feedback_payload_t" value="SF_MESSAGE_EVENT_CLASS_HALL_EFFECT_FEEDBACK"/>
+    <eventClass display="Diagnostics_data" header="diagnostics_data_api.h" id="eventClass.810329824" payload="diagnostics_data_payload" payloadType="diagnostics_data_payload_t" value="SF_MESSAGE_EVENT_CLASS_DIAGNOSTICS_DATA"/>
     <subscriber context="rtos.threadx.thread.246016058" end="0" id="subscriber.1064569996" start="0">
       <subscribe eventClass="module.framework.sf_touch_panel.eventClass.eventClassTouch"/>
       <subscribe eventClass="eventClass.1505151151"/>
       <subscribe eventClass="eventClass.354113003"/>
+      <subscribe eventClass="eventClass.810329824"/>
     </subscriber>
   </synergyMessagingConfiguration>
   <synergyModuleConfiguration>
@@ -815,7 +819,7 @@
       <property id="_symbol" value="diagnostics_thread"/>
       <property id="rtos.threadx.thread.name" value="DIAGNOSTICS"/>
       <property id="rtos.threadx.thread.stack" value="1024"/>
-      <property id="rtos.threadx.thread.priority" value="9"/>
+      <property id="rtos.threadx.thread.priority" value="6"/>
       <property id="rtos.threadx.thread.autostart" value="rtos.threadx.thread.autostart.enabled"/>
       <property id="rtos.threadx.thread.timeslice" value="1"/>
     </context>

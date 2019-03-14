@@ -22,6 +22,7 @@ extern GX_WINDOW_ROOT * p_window_root;
 static UINT show_window(GX_WINDOW * p_new, GX_WIDGET * p_widget, bool detach_old);
 static void update_text(GX_WIDGET * p_widget, GX_RESOURCE_ID id, char * p_text);
 static void update_state_data(GX_EVENT *event_ptr);
+static void show_hide_widget(GX_WIDGET * p_widget, GX_RESOURCE_ID id, bool show);
 
 static char g_local_duty_cycle_str [4] = "000";
 static char g_local_rpms_speed_str [6] = "00000";
@@ -63,6 +64,31 @@ UINT system_diagnostics_handler(GX_WINDOW *widget, GX_EVENT *event_ptr)
         case GX_SIGNAL(ID_WINDOWCHANGER_MAIN, GX_EVENT_CLICKED):
             show_window((GX_WINDOW*)&main_screen, (GX_WIDGET*)widget, true);
             break;
+        case GXEVENT_MSG_REFRESH_SYSTEM_DATA:
+        {
+            update_state_data(event_ptr);
+
+            if(g_gui_state.ground_short_data)
+            {
+                show_hide_widget((GX_WIDGET *) widget, ID_WINDOW_GROUND_SHORTCUT, g_gui_state.ground_short_data);
+            }
+            else
+            {
+                show_hide_widget((GX_WIDGET *) widget, ID_WINDOW_GROUND_SHORTCUT, g_gui_state.ground_short_data);
+            }
+
+            if(g_gui_state.battery_short_data)
+            {
+                 show_hide_widget((GX_WIDGET *) widget, ID_WINDOW_BATTERY_SHORTCUT, g_gui_state.battery_short_data);
+            }
+            else
+            {
+                 show_hide_widget((GX_WIDGET *) widget, ID_WINDOW_BATTERY_SHORTCUT, g_gui_state.battery_short_data);
+            }
+
+            break;
+        }
+
         default:
             result = gx_window_event_process(widget, event_ptr);
             break;
@@ -130,6 +156,34 @@ static void update_state_data(GX_EVENT *event_ptr)
     tx_mutex_put(&g_state_data_mutex);
 }
 
+static void show_hide_widget(GX_WIDGET * p_widget, GX_RESOURCE_ID id, bool show)
+{
+    GX_WIDGET * p_target_widget;
+
+    UINT err = gx_widget_find(p_widget, (USHORT)id, GX_SEARCH_DEPTH_INFINITE, (GX_WIDGET **) &p_target_widget);
+    if (GX_SUCCESS == err)
+    {
+        if (show)
+        {
+            err = gx_widget_show(p_target_widget);
+            if (GX_SUCCESS != err) {
+                while(1);
+            }
+
+        }
+        else
+        {
+            err = gx_widget_hide(p_target_widget);
+            if (GX_SUCCESS != err) {
+                while(1);
+            }
+
+        }
+    } else {
+        while(1);
+    }
+}
+
 /*!===========================================================================
  *
  * @file guiapp_event_handlers.c
@@ -141,6 +195,9 @@ static void update_state_data(GX_EVENT *event_ptr)
  *
  * - 03-Mar-2019 Gpe. Josue Uribe  Rev 2
  *   - Task: Update RPMs in the GUI.
+ *
+ * - 12-Mar-2019 Gpe. Josue Uribe  Rev 3
+ *   - Task: Update shortcut data in the GUI.
  *
  *===========================================================================*/
 

@@ -6,7 +6,7 @@
 /*  www.expresslogic.com.                                                      */
 /*                                                                             */
 /*  GUIX Studio Revision 5.4.1.1                                               */
-/*  Date (dd.mm.yyyy): 11. 2.2019   Time (hh:mm): 01:15                        */
+/*  Date (dd.mm.yyyy): 13. 3.2019   Time (hh:mm): 01:21                        */
 /*******************************************************************************/
 
 
@@ -901,7 +901,7 @@ GX_CONST GX_STUDIO_WIDGET system_diagnostics_window_battery_shortcut_define =
 {
     "window_battery_shortcut",
     GX_TYPE_WINDOW,                          /* widget type                    */
-    ID_BATTERY_SHORTCUT,                     /* widget id                      */
+    ID_WINDOW_BATTERY_SHORTCUT,              /* widget id                      */
     #if defined(GX_WIDGET_USER_DATA)
     0,                                       /* user data                      */
     #endif

@@ -3602,7 +3602,7 @@
 <accepts_focus>TRUE</accepts_focus>
 <normal_fill_color>WINDOW_FILL</normal_fill_color>
 <selected_fill_color>SELECTED_FILL</selected_fill_color>
-<id_name>ID_BATTERY_SHORTCUT</id_name>
+<id_name>ID_WINDOW_BATTERY_SHORTCUT</id_name>
 <template>FALSE</template>
 <visible_at_startup>FALSE</visible_at_startup>
 <wallpaper>BATTERY_SHORTCUT</wallpaper>
